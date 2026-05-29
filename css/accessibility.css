@@ -1,0 +1,152 @@
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  transform: translateY(-140%);
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  background: #000000;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 4px solid #ffbf47;
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html.text-scale-small {
+  --text-scale: 0.94;
+}
+
+html.text-scale-large {
+  --text-scale: 1.12;
+}
+
+html.text-scale-xlarge {
+  --text-scale: 1.24;
+}
+
+body.accessible-mode {
+  background: #ffffff;
+}
+
+body.accessible-mode .section {
+  scroll-margin-top: 148px;
+}
+
+body.accessible-mode .chart-card,
+body.accessible-mode .kpi-card,
+body.accessible-mode .info-card,
+body.accessible-mode .activity-card,
+body.accessible-mode .check-panel,
+body.accessible-mode .impact-card,
+body.accessible-mode .learning-card,
+body.accessible-mode .objective-card,
+body.accessible-mode .table-wrap {
+  box-shadow: none;
+}
+
+body.high-contrast {
+  --unir-blue: #003b8f;
+  --unir-blue-dark: #001f4f;
+  --ink: #000000;
+  --ink-soft: #111111;
+  --muted: #222222;
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --surface-alt: #f1f1f1;
+  --line: #000000;
+  --teal: #006a70;
+  --coral: #9a3d00;
+  --green: #005f32;
+  color-scheme: light;
+}
+
+body.high-contrast .topbar,
+body.high-contrast .sidebar,
+body.high-contrast .mobile-drawer,
+body.high-contrast .chart-card,
+body.high-contrast .kpi-card,
+body.high-contrast .info-card,
+body.high-contrast .activity-card,
+body.high-contrast .check-panel,
+body.high-contrast .impact-card,
+body.high-contrast .learning-card,
+body.high-contrast .objective-card,
+body.high-contrast .table-wrap,
+body.high-contrast .media-frame,
+body.high-contrast .method-shell,
+body.high-contrast .pulse-card {
+  border-color: #000000;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+body.high-contrast .nav-link.active,
+body.high-contrast .nav-link:hover,
+body.high-contrast .mobile-drawer a:hover,
+body.high-contrast .learning-card h3,
+body.high-contrast .data-table th,
+body.high-contrast #budget-table th {
+  background: #000000;
+  color: #ffffff;
+}
+
+body.high-contrast a {
+  color: #002f8f;
+}
+
+body.high-contrast .toolbar-button[aria-pressed="true"],
+body.high-contrast .expand-button,
+body.high-contrast .accessibility-mark,
+body.high-contrast .objective-list li::before {
+  background: #000000;
+  color: #ffffff;
+}
+
+body.high-contrast .hero-highlights li::before,
+body.high-contrast .check-panel li::before {
+  background: #000000;
+}
+
+body.reduce-motion *,
+body.reduce-motion *::before,
+body.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.001ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dashboard interactivo académico del proyecto Respira Nou Barris para la convocatoria UNIR.">
+    <title>Respira Nou Barris | Dashboard interactivo</title>
+    <link rel="icon" type="image/png" href="assets/images/accessibility-icon.png">
+    <link rel="preload" href="assets/data/data.json" as="fetch" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/animations.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegación del dashboard">
+        <div class="brand-block">
+          <img src="assets/images/logo-unir.png" alt="Logo UNIR" width="156" height="48">
+          <span class="brand-kicker">Dashboard académico</span>
+        </div>
+
+        <nav class="main-nav" aria-label="Secciones principales">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#contexto" class="nav-link">Contexto</a>
+          <a href="#problema" class="nav-link">Problema y datos</a>
+          <a href="#desigualdad" class="nav-link">Desigualdad</a>
+          <a href="#justificacion" class="nav-link">Justificación</a>
+          <a href="#marco-teorico" class="nav-link">Marco teórico</a>
+          <a href="#objetivos" class="nav-link">Objetivos</a>
+          <a href="#destinatarios" class="nav-link">Destinatarios</a>
+          <a href="#metodologia" class="nav-link">Metodología</a>
+          <a href="#actividades" class="nav-link">Actividades</a>
+          <a href="#impacto" class="nav-link">Impacto</a>
+          <a href="#presupuesto" class="nav-link">Presupuesto</a>
+          <a href="#referencias" class="nav-link">Referencias APA</a>
+          <a href="#aprendizajes" class="nav-link">Aprendizajes grupo</a>
+        </nav>
+
+        <div class="rubric-mini" aria-labelledby="rubric-title">
+          <p id="rubric-title">Rúbrica UNIR</p>
+          <strong>10 pts</strong>
+          <span>Calidad, teoría, coherencia, creatividad y presentación.</span>
+        </div>
+      </aside>
+
+      <div class="page">
+        <header class="topbar" role="banner">
+          <button class="icon-button menu-toggle" type="button" aria-label="Abrir navegación" aria-expanded="false" aria-controls="sidebarDrawer">
+            <span aria-hidden="true">☰</span>
+          </button>
+
+          <div class="topbar-title">
+            <span class="accessibility-mark" aria-hidden="true">♿</span>
+            <span>Respira Nou Barris</span>
+          </div>
+
+          <div class="accessibility-toolbar" aria-label="Controles de accesibilidad">
+            <button class="toolbar-button" id="accessibleMode" type="button" aria-pressed="false">
+              <img src="assets/images/accessibility-icon.png" alt="" width="20" height="20" aria-hidden="true">
+              Modo accesible
+            </button>
+            <button class="toolbar-button" id="contrastToggle" type="button" aria-pressed="false">Alto contraste</button>
+            <button class="toolbar-button" id="motionToggle" type="button" aria-pressed="false">Sin animaciones</button>
+            <div class="text-controls" role="group" aria-label="Tamaño del texto">
+              <button type="button" id="textDecrease" aria-label="Reducir tamaño del texto">A−</button>
+              <button type="button" id="textReset" aria-label="Restablecer tamaño del texto">A</button>
+              <button type="button" id="textIncrease" aria-label="Aumentar tamaño del texto">A+</button>
+            </div>
+          </div>
+        </header>
+
+        <nav class="mobile-drawer" id="sidebarDrawer" aria-label="Navegación móvil" hidden>
+          <a href="#home">Home</a>
+          <a href="#contexto">Contexto</a>
+          <a href="#problema">Problema y datos</a>
+          <a href="#desigualdad">Desigualdad</a>
+          <a href="#justificacion">Justificación</a>
+          <a href="#marco-teorico">Marco teórico</a>
+          <a href="#objetivos">Objetivos</a>
+          <a href="#destinatarios">Destinatarios</a>
+          <a href="#metodologia">Metodología</a>
+          <a href="#actividades">Actividades</a>
+          <a href="#impacto">Impacto</a>
+          <a href="#presupuesto">Presupuesto</a>
+          <a href="#referencias">Referencias APA</a>
+          <a href="#aprendizajes">Aprendizajes grupo</a>
+        </nav>
+
+        <main id="main-content" tabindex="-1">
+          <section class="hero section reveal" id="home" aria-labelledby="home-title">
+            <div class="hero-content">
+              <p class="eyebrow" id="home-eyebrow"></p>
+              <h1 id="home-title"></h1>
+              <p class="lead" id="home-lead"></p>
+              <ul class="hero-highlights" id="home-highlights"></ul>
+            </div>
+            <div class="hero-panel" aria-label="Resumen ejecutivo del proyecto">
+              <div class="pulse-card">
+                <span class="pulse-label">Población base</span>
+                <strong id="hero-population">148.431</strong>
+                <span>adolescentes 10-19 años</span>
+              </div>
+              <div class="mini-timeline" aria-label="Lógica del proyecto">
+                <span>Detectar</span>
+                <span>Acompañar</span>
+                <span>Fortalecer</span>
+                <span>Derivar</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="section reveal" aria-labelledby="kpi-title">
+            <div class="section-heading compact">
+              <p class="eyebrow">Lectura ejecutiva</p>
+              <h2 id="kpi-title">Indicadores clave</h2>
+            </div>
+            <div class="kpi-grid" id="kpi-grid" aria-live="polite"></div>
+            <div class="rubric-panel" aria-labelledby="rubric-panel-title">
+              <h3 id="rubric-panel-title">Matriz de cumplimiento UNIR</h3>
+              <div class="rubric-grid" id="rubric-grid"></div>
+            </div>
+          </section>
+
+          <section class="section reveal" id="contexto" aria-labelledby="contexto-title">
+            <div class="section-heading">
+              <p class="eyebrow">01</p>
+              <h2 id="contexto-title">Contexto</h2>
+            </div>
+            <div class="two-column">
+              <div class="prose" id="context-content"></div>
+              <figure class="media-frame">
+                <img id="context-diagram" src="assets/images/charts/contexto-territorial.png" alt="" loading="lazy">
+                <figcaption>Diagrama de contexto territorial del problema.</figcaption>
+              </figure>
+            </div>
+            <div class="info-grid" id="context-cards"></div>
+          </section>
+
+          <section class="section reveal" id="problema" aria-labelledby="problema-title">
+            <div class="section-heading">
+              <p class="eyebrow">02</p>
+              <h2 id="problema-title">Problema y datos</h2>
+            </div>
+            <div class="two-column align-start">
+              <div class="prose" id="problem-content"></div>
+              <div class="fact-stack" id="problem-facts"></div>
+            </div>
+            <div class="chart-grid" id="charts-grid"></div>
+          </section>
+
+          <section class="section reveal" id="desigualdad" aria-labelledby="desigualdad-title">
+            <div class="section-heading">
+              <p class="eyebrow">03</p>
+              <h2 id="desigualdad-title">Desigualdad</h2>
+            </div>
+            <div class="two-column">
+              <div class="prose" id="inequality-content"></div>
+              <div class="tag-cloud" id="inequality-tags" aria-label="Factores de desigualdad"></div>
+            </div>
+          </section>
+
+          <section class="section reveal" id="justificacion" aria-labelledby="justificacion-title">
+            <div class="section-heading">
+              <p class="eyebrow">04</p>
+              <h2 id="justificacion-title">Justificación</h2>
+            </div>
+            <div class="two-column align-start">
+              <div class="prose" id="justification-content"></div>
+              <div class="check-panel">
+                <h3>Necesidad social</h3>
+                <ul id="justification-needs"></ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="section reveal" id="marco-teorico" aria-labelledby="marco-title">
+            <div class="section-heading">
+              <p class="eyebrow">05</p>
+              <h2 id="marco-title">Marco teórico</h2>
+              <p id="theory-intro" class="section-intro"></p>
+            </div>
+            <div class="accordion-list" id="theory-frameworks"></div>
+            <div class="dual-list">
+              <div class="check-panel">
+                <h3>Factores de riesgo</h3>
+                <ul id="theory-risks"></ul>
+              </div>
+              <div class="check-panel success">
+                <h3>Factores de protección</h3>
+                <ul id="theory-protective"></ul>
+              </div>
+            </div>
+            <div class="info-grid" id="theory-foundations"></div>
+          </section>
+
+          <section class="section reveal" id="objetivos" aria-labelledby="objetivos-title">
+            <div class="section-heading">
+              <p class="eyebrow">06</p>
+              <h2 id="objetivos-title">Objetivos</h2>
+            </div>
+            <div class="objective-card">
+              <span>Objetivo general</span>
+              <p id="objective-general"></p>
+            </div>
+            <ol class="objective-list" id="objective-specific"></ol>
+          </section>
+
+          <section class="section reveal" id="destinatarios" aria-labelledby="destinatarios-title">
+            <div class="section-heading">
+              <p class="eyebrow">07</p>
+              <h2 id="destinatarios-title">Destinatarios</h2>
+            </div>
+            <div class="two-column align-start">
+              <div class="prose" id="participants-content"></div>
+              <div class="check-panel">
+                <h3>Criterios de acceso</h3>
+                <ul id="participants-criteria"></ul>
+              </div>
+            </div>
+            <div class="dual-list">
+              <div class="check-panel">
+                <h3>Señales priorizadas</h3>
+                <ul id="participants-signals"></ul>
+              </div>
+              <div class="check-panel success">
+                <h3>Priorización</h3>
+                <ul id="participants-priority"></ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="section reveal" id="metodologia" aria-labelledby="metodologia-title">
+            <div class="section-heading">
+              <p class="eyebrow">08</p>
+              <h2 id="metodologia-title">Metodología</h2>
+            </div>
+            <div class="method-shell">
+              <div class="method-copy">
+                <p id="method-description"></p>
+                <div class="method-tags" id="method-approach"></div>
+              </div>
+              <div class="flow-diagram" aria-label="Lógica metodológica del proyecto">
+                <span>Detectar</span>
+                <span>Acompañar</span>
+                <span>Fortalecer</span>
+                <span>Derivar</span>
+              </div>
+            </div>
+            <div class="info-grid" id="method-levels"></div>
+            <div class="check-panel">
+              <h3>Estrategias metodológicas</h3>
+              <ul id="method-strategies"></ul>
+            </div>
+          </section>
+
+          <section class="section reveal" id="actividades" aria-labelledby="actividades-title">
+            <div class="section-heading">
+              <p class="eyebrow">09</p>
+              <h2 id="actividades-title">Actividades</h2>
+              <p class="section-intro">Tres módulos conectados para alfabetización emocional, apoyo entre iguales y red comunitaria.</p>
+            </div>
+            <div class="activity-grid" id="activities-grid"></div>
+          </section>
+
+          <section class="section reveal" id="impacto" aria-labelledby="impacto-title">
+            <div class="section-heading">
+              <p class="eyebrow">10</p>
+              <h2 id="impacto-title">Impacto</h2>
+              <p id="impact-summary" class="section-intro"></p>
+            </div>
+            <div class="impact-grid" id="impact-results"></div>
+            <div class="chart-grid single" id="impact-chart-grid"></div>
+          </section>
+
+          <section class="section reveal" id="presupuesto" aria-labelledby="presupuesto-title">
+            <div class="section-heading">
+              <p class="eyebrow">11</p>
+              <h2 id="presupuesto-title">Presupuesto</h2>
+              <p class="section-intro">Distribución ajustada al máximo de 20.000 € definido por la convocatoria.</p>
+            </div>
+            <div class="two-column align-start">
+              <div class="table-wrap">
+                <table id="budget-table">
+                  <caption>Presupuesto del proyecto Respira Nou Barris</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Partida</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Importe</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row" colspan="2">Total</th>
+                      <td id="budget-total"></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <div class="chart-grid single" id="budget-chart-grid"></div>
+            </div>
+          </section>
+
+          <section class="section reveal" id="referencias" aria-labelledby="referencias-title">
+            <div class="section-heading">
+              <p class="eyebrow">12</p>
+              <h2 id="referencias-title">Referencias APA</h2>
+              <p class="section-intro">Referencias completas extraídas del borrador principal.</p>
+            </div>
+            <ol class="references-list" id="references-list"></ol>
+          </section>
+
+          <section class="section reveal" id="aprendizajes" aria-labelledby="aprendizajes-title">
+            <div class="section-heading">
+              <p class="eyebrow">13</p>
+              <h2 id="aprendizajes-title">Aprendizajes del grupo</h2>
+              <p class="section-intro">Registro de acciones y aprendizajes alineado con la rúbrica de la actividad.</p>
+            </div>
+            <div class="learning-grid" id="learning-grid"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="status-region sr-only" id="status-region" aria-live="polite"></div>
+    <noscript>Este dashboard necesita JavaScript para cargar gráficos y contenido interactivo. La información principal está disponible en assets/data/data.json.</noscript>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+    <script src="js/accessibility.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+    <script src="js/charts.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
