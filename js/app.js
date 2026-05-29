@@ -98,6 +98,8 @@
   }
 
   function renderCharts(data) {
+    if (!window.RespiraCharts?.createChartCard) return;
+
     const grid = byId("charts-grid");
     clear(grid);
     ["population", "mentalHealth", "wellbeing", "bodyDissatisfaction"].forEach((id) => {
@@ -387,44 +389,74 @@
 
   function renderDashboard(data) {
     applyVisualCorrections();
-    renderHome(data);
-    renderKpis(data);
-    renderRubric(data);
-    renderContext(data);
-    renderProblem(data);
-    renderInequality(data);
-    renderJustification(data);
-    renderTheory(data);
-    renderObjectives(data);
-    renderParticipants(data);
-    renderMethodology(data);
-    renderActivities(data);
-    renderImpact(data);
-    renderBudget(data);
-    renderCharts(data);
-    renderReferences(data);
-    renderLearning(data);
+
+    [
+      renderHome,
+      renderKpis,
+      renderRubric,
+      renderContext,
+      renderProblem,
+      renderInequality,
+      renderJustification,
+      renderTheory,
+      renderObjectives,
+      renderParticipants,
+      renderMethodology,
+      renderActivities,
+      renderImpact,
+      renderBudget,
+      renderCharts,
+      renderReferences,
+      renderLearning
+    ].forEach((renderSection) => {
+      try {
+        renderSection(data);
+      } catch (error) {
+        console.error(`Error en ${renderSection.name}`, error);
+      }
+    });
+
     applyVisualCorrections();
 
     window.RespiraInteractions?.initAll(document);
     window.RespiraAccessibility?.announce?.("Dashboard cargado.");
   }
 
+  async function loadData() {
+    const urls = [
+      DATA_URL,
+      "https://raw.githubusercontent.com/carlosarandabcn-80/DESARROLLO-HUMANO/main/assets/data/data.json"
+    ];
+
+    let lastError;
+    for (const url of urls) {
+      try {
+        const response = await fetch(url, { cache: "no-store" });
+        if (!response.ok) throw new Error(`No se pudo cargar ${url}`);
+        return response.json();
+      } catch (error) {
+        lastError = error;
+      }
+    }
+
+    throw lastError || new Error("No se pudo cargar data.json");
+  }
+
   async function init() {
     try {
-      const response = await fetch(DATA_URL);
-      if (!response.ok) throw new Error(`No se pudo cargar ${DATA_URL}`);
-      const data = await response.json();
+      const data = await loadData();
       renderDashboard(data);
     } catch (error) {
       console.error(error);
       const main = byId("main-content");
-      const message = el("section", "section");
-      message.append(
-        el("h1", "", "No se pudo cargar el dashboard"),
-        el("p", "", "Revisa que el proyecto se esté abriendo desde un servidor local o GitHub Pages para que el archivo JSON pueda cargarse correctamente.")
-      );
-      main.prepend(message);
+      if (main && !main.querySelector(".load-error")) {
+        const message = el("section", "section load-error");
+        message.append(
+          el("h1", "", "No se pudo cargar el dashboard"),
+          el("p", "", "GitHub Pages aún no ha entregado el archivo de datos actualizado. Recarga la página en unos segundos.")
+        );
+        main.prepend(message);
+      }
       window.RespiraAccessibility?.announce?.("Error al cargar el dashboard.");
     }
   }
