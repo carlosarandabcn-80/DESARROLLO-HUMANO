@@ -130,7 +130,7 @@
   function renderJustification(data) {
     const justification = data.sections.justification;
     byId("justificacion-title").textContent = justification.title;
-    renderParagraphs(byId("justification-content"), justification.paragraphs);
+    renderParagraphs(byId("justificacion-content"), justification.paragraphs);
     renderList(byId("justification-needs"), justification.needs);
   }
 
@@ -315,7 +315,78 @@
     });
   }
 
+  function applyVisualCorrections() {
+    const visualMap = [
+      [".hero-media img", "assets/images/photos/hero-ai-respira-nou-barris.svg", "Ilustración generada con IA de Nou Barris como entorno comunitario de bienestar adolescente."],
+      [".photo-card.large img", "assets/images/photos/school-community.svg", "Ilustración de un instituto y adolescentes en un entorno comunitario de Nou Barris."],
+      [".photo-card:not(.large):nth-of-type(2) img", "assets/images/photos/mental-health-network.svg", "Ilustración de red comunitaria, apoyo emocional y recursos de salud mental de proximidad."],
+      [".photo-card:not(.large):nth-of-type(3) img", "assets/images/photos/barcelona-nou-barris.svg", "Ilustración del paisaje urbano de Barcelona con skyline y colinas de Nou Barris."]
+    ];
+
+    visualMap.forEach(([selector, src, alt]) => {
+      const image = document.querySelector(selector);
+      if (image) {
+        image.src = src;
+        image.alt = alt;
+        image.removeAttribute("srcset");
+      }
+    });
+
+    const heroCaption = document.querySelector(".hero-media figcaption");
+    if (heroCaption) {
+      heroCaption.textContent = "Imagen generada con IA: bienestar adolescente, comunidad y territorio de Nou Barris.";
+    }
+
+    const logo = document.querySelector(".brand-block img");
+    if (logo) {
+      logo.src = "https://raw.githubusercontent.com/carlosarandabcn-80/infografia-interactiva/main/assets/unir-logo.svg";
+    }
+
+    const brandBlock = document.querySelector(".brand-block");
+    if (brandBlock && !brandBlock.querySelector(".brand-project")) {
+      const project = el("span", "brand-project", "Respira Nou Barris");
+      brandBlock.append(project);
+    }
+
+    const accessibilityButton = byId("accessibilityToggle");
+    if (accessibilityButton && !accessibilityButton.querySelector("img")) {
+      accessibilityButton.replaceChildren();
+      const icon = document.createElement("img");
+      icon.src = "assets/images/accessibility-icon.png";
+      icon.alt = "";
+      icon.setAttribute("aria-hidden", "true");
+      accessibilityButton.append(icon);
+      accessibilityButton.setAttribute("aria-label", "Abrir opciones de accesibilidad");
+    }
+
+    const textControls = document.querySelector(".text-controls");
+    if (textControls && !textControls.querySelector("span")) {
+      textControls.prepend(el("span", "", "Tamaño de texto"));
+    }
+
+    let style = byId("visual-hotfix-style");
+    if (!style) {
+      style = document.createElement("style");
+      style.id = "visual-hotfix-style";
+      document.head.append(style);
+    }
+
+    style.textContent = `
+      .brand-project{color:#fff;font-size:1rem;font-weight:950;line-height:1.2}
+      .topbar{position:fixed;top:1rem;right:1rem;left:auto;min-height:0;display:block;padding:0;border:0;background:transparent;backdrop-filter:none;z-index:80}
+      .topbar-title,.barcelona-skyline,.topbar-progress{display:none!important}
+      .accessibility-trigger{width:52px;height:52px;min-height:52px;padding:0;border-radius:50%;background:#fff;box-shadow:0 18px 42px rgba(10,31,68,.22)}
+      .accessibility-trigger img{width:30px;height:30px;display:block}
+      .accessibility-trigger span{display:none}
+      .accessibility-panel{right:0;top:calc(100% + .75rem)}
+      .hero{min-height:calc(100vh - 1px);padding-top:3.3rem}
+      .hero-media img{aspect-ratio:16/10;object-position:center center}
+      @media(max-width:900px){.topbar{top:.75rem;right:.75rem}.hero{padding-top:2rem}}
+    `;
+  }
+
   function renderDashboard(data) {
+    applyVisualCorrections();
     renderHome(data);
     renderKpis(data);
     renderRubric(data);
@@ -333,6 +404,7 @@
     renderCharts(data);
     renderReferences(data);
     renderLearning(data);
+    applyVisualCorrections();
 
     window.RespiraInteractions?.initAll(document);
     window.RespiraAccessibility?.announce?.("Dashboard cargado.");

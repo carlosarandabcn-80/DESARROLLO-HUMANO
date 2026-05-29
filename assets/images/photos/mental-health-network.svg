@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Red de salud mental de proximidad</title>
+  <desc id="desc">Ilustración de red comunitaria, apoyo emocional y recursos de proximidad.</desc>
+  <rect width="1200" height="800" fill="#eef6ff"/>
+  <circle cx="610" cy="390" r="220" fill="#d8f3f0"/>
+  <path d="M420 420 C520 260 720 260 810 420 C745 560 500 560 420 420Z" fill="#ffffff"/>
+  <path d="M490 420 C560 330 685 330 745 420 C690 500 550 500 490 420Z" fill="#0a4fa4" opacity=".14"/>
+  <circle cx="610" cy="420" r="54" fill="#00a6a6"/>
+  <g stroke="#0a4fa4" stroke-width="8" stroke-linecap="round" opacity=".75">
+    <path d="M610 420 335 270"/>
+    <path d="M610 420 880 245"/>
+    <path d="M610 420 900 600"/>
+    <path d="M610 420 310 580"/>
+  </g>
+  <g fill="#ffffff" stroke="#0a4fa4" stroke-width="8">
+    <circle cx="335" cy="270" r="48"/>
+    <circle cx="880" cy="245" r="48"/>
+    <circle cx="900" cy="600" r="48"/>
+    <circle cx="310" cy="580" r="48"/>
+  </g>
+  <path d="M250 705 C430 620 760 625 950 705" fill="none" stroke="#ff6b35" stroke-width="12" stroke-linecap="round"/>
+</svg>

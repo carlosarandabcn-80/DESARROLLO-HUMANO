@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Paisaje urbano de Nou Barris</title>
+  <desc id="desc">Ilustración del paisaje urbano de Barcelona con skyline y colinas de Nou Barris.</desc>
+  <rect width="1200" height="800" fill="#e7f1ff"/>
+  <circle cx="980" cy="140" r="80" fill="#fff4bd"/>
+  <path d="M0 470 C220 380 360 430 540 355 C760 265 940 330 1200 230 V800 H0Z" fill="#bde6d8"/>
+  <path d="M0 560 C260 500 480 520 690 455 C900 390 1030 430 1200 360 V800 H0Z" fill="#79c8b5"/>
+  <g fill="#15213a">
+    <rect x="90" y="410" width="90" height="220"/>
+    <rect x="210" y="360" width="120" height="270"/>
+    <rect x="370" y="430" width="78" height="200"/>
+    <rect x="500" y="320" width="132" height="310"/>
+    <rect x="680" y="390" width="90" height="240"/>
+    <rect x="820" y="340" width="115" height="290"/>
+    <rect x="985" y="430" width="92" height="200"/>
+  </g>
+  <path d="M85 630H1110" stroke="#0a4fa4" stroke-width="12" stroke-linecap="round"/>
+  <path d="M130 682 C310 620 500 650 690 605 C880 562 1000 600 1125 565" fill="none" stroke="#00a6a6" stroke-width="9" stroke-linecap="round"/>
+</svg>

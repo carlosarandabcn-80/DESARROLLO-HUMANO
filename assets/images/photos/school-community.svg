@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Centro educativo y comunidad</title>
+  <desc id="desc">Ilustración de un instituto y adolescentes en un entorno comunitario.</desc>
+  <rect width="1200" height="800" fill="#eaf4ff"/>
+  <path d="M0 610 C210 540 400 575 610 520 C810 468 1000 510 1200 450 V800 H0Z" fill="#c9eadb"/>
+  <rect x="130" y="230" width="560" height="310" rx="22" fill="#ffffff"/>
+  <rect x="170" y="270" width="90" height="72" rx="8" fill="#0a4fa4" opacity=".85"/>
+  <rect x="290" y="270" width="90" height="72" rx="8" fill="#00a6a6" opacity=".75"/>
+  <rect x="410" y="270" width="90" height="72" rx="8" fill="#0a4fa4" opacity=".85"/>
+  <rect x="530" y="270" width="90" height="72" rx="8" fill="#00a6a6" opacity=".75"/>
+  <rect x="330" y="390" width="150" height="150" rx="12" fill="#15213a"/>
+  <path d="M116 230h600L416 90Z" fill="#173f76"/>
+  <circle cx="820" cy="470" r="40" fill="#ff6b35"/>
+  <circle cx="905" cy="452" r="34" fill="#0a4fa4"/>
+  <circle cx="980" cy="480" r="38" fill="#00a6a6"/>
+  <path d="M770 650c26-88 116-110 166 0Z" fill="#10203f"/>
+  <path d="M858 650c20-76 101-104 154 0Z" fill="#173f76"/>
+  <path d="M930 650c23-83 110-100 162 0Z" fill="#1b6766"/>
+</svg>
