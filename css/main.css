@@ -1,21 +1,23 @@
 :root {
   color-scheme: light;
-  --unir-blue: #0a4fa4;
-  --unir-blue-dark: #073b7a;
-  --ink: #172033;
-  --ink-soft: #314057;
+  --unir-blue: #0057ff;
+  --unir-blue-dark: #06347a;
+  --ink: #101828;
+  --ink-soft: #2d3a52;
   --muted: #667085;
-  --paper: #f6f8fb;
+  --paper: #f3f6fb;
   --surface: #ffffff;
-  --surface-alt: #eef6f8;
-  --line: #d9e2ee;
-  --teal: #008c95;
-  --coral: #d65f00;
-  --green: #2f8f5b;
-  --gold: #b87900;
+  --surface-alt: #edf7ff;
+  --line: #d8e1ef;
+  --teal: #00a6a6;
+  --coral: #ff6b35;
+  --green: #2fb344;
+  --gold: #f2b705;
   --danger: #b42318;
-  --shadow: 0 18px 50px rgba(23, 32, 51, 0.10);
-  --shadow-soft: 0 10px 28px rgba(23, 32, 51, 0.08);
+  --plum: #6c5ce7;
+  --navy: #10172a;
+  --shadow: 0 24px 70px rgba(16, 24, 40, 0.14);
+  --shadow-soft: 0 14px 36px rgba(16, 24, 40, 0.10);
   --radius: 8px;
   --text-scale: 1;
   --sidebar-width: 292px;
@@ -36,7 +38,7 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(120deg, rgba(10, 79, 164, 0.07), rgba(0, 140, 149, 0.06) 42%, rgba(246, 248, 251, 0) 72%),
+    linear-gradient(135deg, rgba(0, 87, 255, 0.08), rgba(0, 166, 166, 0.06) 42%, rgba(255, 107, 53, 0.05) 100%),
     var(--paper);
   font-size: calc(16px * var(--text-scale));
   line-height: 1.6;
@@ -155,6 +157,24 @@ p {
   border-bottom: 1px solid var(--line);
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(243, 246, 251, 0.95), rgba(243, 246, 251, 0.72) 48%, rgba(243, 246, 251, 0.45)),
+    url("https://upload.wikimedia.org/wikipedia/commons/2/24/Parc_Central_Nou_Barris_%287185960105%29.jpg");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
@@ -197,13 +217,36 @@ p {
   gap: 1rem;
 }
 
+.hero-media {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.hero-media figcaption {
+  padding: 0.75rem 0.9rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 .pulse-card {
   min-height: 280px;
   display: grid;
   align-content: center;
   gap: 0.3rem;
   padding: 2rem;
-  border: 1px solid rgba(10, 79, 164, 0.18);
+  border: 1px soliêÅrgba(10, 79, 164, 0.18);
   border-radius: var(--radius);
   background:
     linear-gradient(135deg, rgba(10, 79, 164, 0.12), rgba(0, 140, 149, 0.10)),
@@ -273,8 +316,9 @@ p {
 .rubric-mini {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.88);
   box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
 }
 
 .kpi-card {
@@ -371,6 +415,66 @@ p {
   padding: 1.2rem;
 }
 
+.visual-story {
+  padding-top: 2.4rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  grid-template-rows: repeat(2, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.photo-card {
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+  margin: 0;
+  border-radius: var(--radius);
+  background: var(--navy);
+  box-shadow: var(--shadow);
+  transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+}
+
+.photo-card.large {
+  grid-row: span 2;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 500ms ease, filter 500ms ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.07);
+  filter: saturate(1.08) contrast(1.03);
+}
+
+.photo-card figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 1.1rem;
+  color: #ffffff;
+  background: linear-gradient(0deg, rgba(16, 23, 42, 0.88), rgba(16, 23, 42, 0.38) 72%, rgba(16, 23, 42, 0));
+  font-weight: 700;
+}
+
+.photo-card figcaption span {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #8ff4f0;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .info-card h3 {
   display: flex;
   gap: 0.55rem;
@@ -430,6 +534,18 @@ p {
   display: grid;
   gap: 1rem;
   padding: 1.15rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-card::before,
+.kpi-card::before,
+.activity-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--unir-blue), var(--teal), var(--coral));
 }
 
 .chart-head {
@@ -726,6 +842,8 @@ p {
   align-content: start;
   gap: 1rem;
   padding: 1.2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .activity-card header {
@@ -840,5 +958,18 @@ p {
 
   .pulse-card strong {
     font-size: 3.2rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .photo-card.large {
+    grid-row: auto;
+  }
+
+  .photo-card {
+    min-height: 320px;
   }
 }

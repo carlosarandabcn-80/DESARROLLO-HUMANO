@@ -69,11 +69,47 @@
     });
   }
 
+  function initScrollProgress() {
+    const progress = document.getElementById("scrollProgress");
+    if (!progress) return;
+
+    const update = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = total > 0 ? window.scrollY / total : 0;
+      progress.style.transform = `scaleX(${Math.min(1, Math.max(0, ratio))})`;
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+  }
+
+  function initMagneticCards(scope = document) {
+    const cards = scope.querySelectorAll(".photo-card, .kpi-card, .chart-card, .activity-card");
+    cards.forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        if (document.body.classList.contains("reduce-motion")) return;
+        const rect = card.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width - 0.5) * 10;
+        const y = ((event.clientY - rect.top) / rect.height - 0.5) * -10;
+        card.style.setProperty("--tilt-x", `${y.toFixed(2)}deg`);
+        card.style.setProperty("--tilt-y", `${x.toFixed(2)}deg`);
+      });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.removeProperty("--tilt-x");
+        card.style.removeProperty("--tilt-y");
+      });
+    });
+  }
+
   function initAll(scope = document) {
     initReveal();
+    initScrollProgress();
     initAccordions(scope);
     initExpandableCards(scope);
     initTableToggles(scope);
+    initMagneticCards(scope);
   }
 
   window.RespiraInteractions = {
@@ -81,8 +117,13 @@
     initReveal,
     initAccordions,
     initExpandableCards,
-    initTableToggles
+    initTableToggles,
+    initScrollProgress,
+    initMagneticCards
   };
 
-  document.addEventListener("DOMContentLoaded", () => initReveal());
+  document.addEventListener("DOMContentLoaded", () => {
+    initReveal();
+    initScrollProgress();
+  });
 })();

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Dashboard interactivo académico del proyecto Respira Nou Barris para la convocatoria UNIR.">
     <title>Respira Nou Barris | Dashboard interactivo</title>
-    <link rel="icon" type="image/png" href="assets/images/accessibility-icon.png">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%230b63ce%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-size=%2732%27 text-anchor=%27middle%27 fill=%27white%27%3E%E2%99%BF%3C/text%3E%3C/svg%3E">
     <link rel="preload" href="assets/data/data.json" as="fetch" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -18,7 +18,7 @@
     <div class="app-shell">
       <aside class="sidebar" aria-label="Navegación del dashboard">
         <div class="brand-block">
-          <img src="assets/images/logo-unir.png" alt="Logo UNIR" width="156" height="48">
+          <img src="https://raw.githubusercontent.com/carlosarandabcn-80/infografia-interactiva/main/assets/unir-logo.svg" alt="UNIR, La Universidad en Internet" width="139" height="107">
           <span class="brand-kicker">Dashboard académico</span>
         </div>
 
@@ -53,21 +53,44 @@
           </button>
 
           <div class="topbar-title">
-            <span class="accessibility-mark" aria-hidden="true">♿</span>
+            <span class="project-status-dot" aria-hidden="true"></span>
             <span>Respira Nou Barris</span>
           </div>
 
-          <div class="accessibility-toolbar" aria-label="Controles de accesibilidad">
-            <button class="toolbar-button" id="accessibleMode" type="button" aria-pressed="false">
-              <img src="assets/images/accessibility-icon.png" alt="" width="20" height="20" aria-hidden="true">
-              Modo accesible
+          <div class="topbar-progress" aria-hidden="true">
+            <span id="scrollProgress"></span>
+          </div>
+
+          <div class="accessibility-hub">
+            <button class="accessibility-trigger" id="accessibilityToggle" type="button" aria-expanded="false" aria-controls="accessibilityPanel">
+              <span aria-hidden="true">♿</span>
+              <span>Accesibilidad</span>
             </button>
-            <button class="toolbar-button" id="contrastToggle" type="button" aria-pressed="false">Alto contraste</button>
-            <button class="toolbar-button" id="motionToggle" type="button" aria-pressed="false">Sin animaciones</button>
-            <div class="text-controls" role="group" aria-label="Tamaño del texto">
-              <button type="button" id="textDecrease" aria-label="Reducir tamaño del texto">A−</button>
-              <button type="button" id="textReset" aria-label="Restablecer tamaño del texto">A</button>
-              <button type="button" id="textIncrease" aria-label="Aumentar tamaño del texto">A+</button>
+            <div class="accessibility-panel" id="accessibilityPanel" role="dialog" aria-label="Opciones de accesibilidad digital" hidden>
+              <div class="accessibility-panel-head">
+                <strong>Accesibilidad digital</strong>
+                <span>WCAG 2.1 AA/AAA</span>
+              </div>
+              <button class="option-switch" id="accessibleMode" type="button" aria-pressed="false">
+                <span>Modo accesible</span>
+                <span class="switch-ui" aria-hidden="true"></span>
+              </button>
+              <button class="option-switch" id="contrastToggle" type="button" aria-pressed="false">
+                <span>Alto contraste</span>
+                <span class="switch-ui" aria-hidden="true"></span>
+              </button>
+              <button class="option-switch" id="motionToggle" type="button" aria-pressed="false">
+                <span>Reducir animaciones</span>
+                <span class="switch-ui" aria-hidden="true"></span>
+              </button>
+              <div class="text-controls" role="group" aria-label="Tamaño del texto">
+                <span>Tamaño de texto</span>
+                <div>
+                  <button type="button" id="textDecrease" aria-label="Reducir tamaño del texto">A−</button>
+                  <button type="button" id="textReset" aria-label="Restablecer tamaño del texto">A</button>
+                  <button type="button" id="textIncrease" aria-label="Aumentar tamaño del texto">A+</button>
+                </div>
+              </div>
             </div>
           </div>
         </header>
@@ -98,6 +121,10 @@
               <ul class="hero-highlights" id="home-highlights"></ul>
             </div>
             <div class="hero-panel" aria-label="Resumen ejecutivo del proyecto">
+              <figure class="hero-media">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Parc_Central_Nou_Barris_%287185960105%29.jpg" alt="Parc Central de Nou Barris, espacio comunitario del distrito de intervención." width="2400" height="1600" fetchpriority="high">
+                <figcaption>Territorio de intervención: Parc Central de Nou Barris.</figcaption>
+              </figure>
               <div class="pulse-card">
                 <span class="pulse-label">Población base</span>
                 <strong id="hero-population">148.431</strong>
@@ -137,6 +164,37 @@
               </figure>
             </div>
             <div class="info-grid" id="context-cards"></div>
+          </section>
+
+          <section class="section reveal visual-story" id="territorio-vivo" aria-labelledby="territorio-vivo-title">
+            <div class="section-heading">
+              <p class="eyebrow">Territorio vivo</p>
+              <h2 id="territorio-vivo-title">Escuela, comunidad y red de proximidad</h2>
+              <p class="section-intro">La intervención se ancla en espacios reales del distrito: centro educativo, parque comunitario y equipamientos vinculados a la salud mental de proximidad.</p>
+            </div>
+            <div class="photo-grid">
+              <figure class="photo-card large">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/186_Institut_Nou_Barris%2C_c._Badosa_10-18_%28Barcelona%29.jpg" alt="Fachada del Institut Nou Barris, centro educativo de referencia para la intervención con adolescentes." loading="lazy" width="2200" height="1650">
+                <figcaption>
+                  <span>Entorno escolar</span>
+                  Institut Nou Barris como base para prevención, detección y acompañamiento.
+                </figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Hospital_Mental_de_la_Santa_Creu_-_seu_del_districte_de_Nou_Barris_P1520529.jpg" alt="Antiguo Hospital Mental de la Santa Creu, actual sede del distrito de Nou Barris." loading="lazy" width="2200" height="1650">
+                <figcaption>
+                  <span>Memoria comunitaria</span>
+                  Equipamientos de proximidad y salud mental en clave no estigmatizante.
+                </figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Vista_de_Torre_Bar%C3%B3_-_20210801_190720.jpg" alt="Vista de Torre Baró y el paisaje urbano de Nou Barris." loading="lazy" width="2200" height="1237">
+                <figcaption>
+                  <span>Desigualdad territorial</span>
+                  Lectura del barrio como contexto de desarrollo, redes y oportunidades.
+                </figcaption>
+              </figure>
+            </div>
           </section>
 
           <section class="section reveal" id="problema" aria-labelledby="problema-title">

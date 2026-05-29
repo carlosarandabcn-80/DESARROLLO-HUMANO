@@ -10,8 +10,8 @@
   grid-template-rows: auto 1fr auto;
   gap: 1.2rem;
   padding: 1.2rem;
-  border-right: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.94);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, #10172a, #15213a 62%, #0b1220);
   backdrop-filter: blur(18px);
   z-index: 50;
 }
@@ -22,12 +22,15 @@
 }
 
 .brand-block img {
-  width: 156px;
+  width: 128px;
   height: auto;
+  padding: 0.7rem;
+  border-radius: var(--radius);
+  background: #ffffff;
 }
 
 .brand-kicker {
-  color: var(--muted);
+  color: #aeb9d1;
   font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -54,27 +57,41 @@
   text-decoration: none;
 }
 
+.sidebar .nav-link {
+  color: #c7d2ea;
+}
+
+.mobile-drawer a {
+  color: var(--ink-soft);
+}
+
 .nav-link:hover,
 .nav-link.active,
+.mobile-drawer a:hover {
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+}
+
 .mobile-drawer a:hover {
   background: #edf4fb;
   color: var(--unir-blue-dark);
 }
 
 .nav-link.active {
-  box-shadow: inset 4px 0 0 var(--unir-blue);
+  box-shadow: inset 4px 0 0 var(--teal);
 }
 
 .rubric-mini {
   display: grid;
   gap: 0.25rem;
   padding: 1rem;
-  background: linear-gradient(135deg, #f7fbff, #f4fbf6);
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .rubric-mini p {
   margin: 0;
-  color: var(--muted);
+  color: #aeb9d1;
   font-size: 0.78rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -82,13 +99,13 @@
 }
 
 .rubric-mini strong {
-  color: var(--unir-blue-dark);
+  color: #ffffff;
   font-size: 1.7rem;
   line-height: 1;
 }
 
 .rubric-mini span {
-  color: var(--muted);
+  color: #dbe5ff;
   font-size: 0.9rem;
 }
 
@@ -102,12 +119,12 @@
   top: 0;
   min-height: var(--topbar-height);
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(120px, 1fr) auto;
   gap: 1rem;
   align-items: center;
   padding: 0.8rem 2rem;
   border-bottom: 1px solid rgba(217, 226, 238, 0.85);
-  background: rgba(246, 248, 251, 0.88);
+  background: rgba(255, 255, 255, 0.80);
   backdrop-filter: blur(18px);
   z-index: 45;
 }
@@ -120,25 +137,39 @@
   font-weight: 950;
 }
 
-.accessibility-mark {
-  width: 2rem;
-  height: 2rem;
-  display: inline-grid;
-  place-items: center;
+.project-status-dot {
+  width: 0.72rem;
+  height: 0.72rem;
+  display: inline-block;
   border-radius: 50%;
-  background: var(--unir-blue);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--teal), var(--unir-blue));
+  box-shadow: 0 0 0 6px rgba(0, 166, 166, 0.12);
 }
 
-.accessibility-toolbar {
-  display: flex;
-  gap: 0.55rem;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+.topbar-progress {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(0, 87, 255, 0.10);
 }
 
-.toolbar-button,
+.topbar-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--unir-blue), var(--teal), var(--coral));
+}
+
+.accessibility-hub {
+  position: relative;
+  justify-self: end;
+}
+
+.accessibility-trigger,
+.option-switch,
 .icon-button,
 .text-controls button {
   min-height: 38px;
@@ -155,24 +186,122 @@
   cursor: pointer;
 }
 
-.toolbar-button[aria-pressed="true"],
-.text-controls button.active {
-  border-color: var(--unir-blue);
+.accessibility-trigger {
+  min-height: 46px;
+  padding-inline: 1rem;
+  border-color: rgba(0, 87, 255, 0.18);
+  background: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+
+.accessibility-trigger span:first-child {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
   background: var(--unir-blue);
   color: #ffffff;
 }
 
-.toolbar-button[aria-pressed="true"] img {
-  filter: brightness(0) invert(1);
+.accessibility-trigger[aria-expanded="true"],
+.accessibility-trigger[aria-pressed="true"] {
+  border-color: var(--unir-blue);
+}
+
+.accessibility-panel {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  width: min(360px, calc(100vw - 2rem));
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 87, 255, 0.16);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow);
+  z-index: 70;
+}
+
+.accessibility-panel-head {
+  display: grid;
+  gap: 0.15rem;
+  padding-bottom: 0.3rem;
+}
+
+.accessibility-panel-head strong {
+  color: var(--ink);
+}
+
+.accessibility-panel-head span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.option-switch {
+  justify-content: space-between;
+  width: 100%;
+  min-height: 48px;
+  background: #f7faff;
+}
+
+.switch-ui {
+  width: 42px;
+  height: 24px;
+  border-radius: 999px;
+  background: #d6dfef;
+  position: relative;
+}
+
+.switch-ui::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(16, 24, 40, 0.22);
+  transition: transform 180ms ease;
+}
+
+.option-switch[aria-pressed="true"] .switch-ui {
+  background: var(--unir-blue);
+}
+
+.option-switch[aria-pressed="true"] .switch-ui::after {
+  transform: translateX(18px);
+}
+
+.option-switch[aria-pressed="true"],
+.text-controls button.active {
+  border-color: var(--unir-blue);
+  background: #eef4ff;
+  color: var(--ink);
 }
 
 .text-controls {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
   gap: 0.25rem;
-  padding: 0.2rem;
+  padding: 0.5rem 0.55rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: #f7faff;
+}
+
+.text-controls > span {
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.text-controls > div {
+  display: inline-flex;
+  gap: 0.25rem;
 }
 
 .text-controls button {
@@ -245,9 +374,8 @@
     justify-self: start;
   }
 
-  .accessibility-toolbar {
-    grid-column: 1 / -1;
-    justify-content: flex-start;
+  .accessibility-hub {
+    justify-self: end;
   }
 
   .hero,
@@ -271,21 +399,16 @@
   }
 
   .topbar {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
   }
 
   .topbar-title {
     font-size: 0.98rem;
   }
 
-  .accessibility-toolbar {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding-bottom: 0.2rem;
-  }
-
-  .toolbar-button {
-    flex: 0 0 auto;
+  .topbar-progress {
+    grid-column: 1 / -1;
+    order: 5;
   }
 
   .kpi-grid,

@@ -60,6 +60,7 @@
     updatePressed("accessibleMode", state.accessibleMode);
     updatePressed("contrastToggle", state.highContrast);
     updatePressed("motionToggle", state.reduceMotion);
+    updatePressed("accessibilityToggle", state.accessibleMode || state.highContrast || state.reduceMotion || state.textScale !== "normal");
 
     if (state.textScale === "small") document.getElementById("textDecrease")?.classList.add("active");
     if (state.textScale === "large" || state.textScale === "xlarge") {
@@ -77,6 +78,38 @@
   function initAccessibility() {
     let state = readState();
     applyState(state);
+    const panel = document.getElementById("accessibilityPanel");
+    const toggle = document.getElementById("accessibilityToggle");
+
+    function closePanel() {
+      if (!panel || !toggle) return;
+      panel.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle?.addEventListener("click", () => {
+      if (!panel) return;
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      panel.hidden = expanded;
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      if (!expanded) {
+        panel.querySelector("button")?.focus();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!panel || !toggle) return;
+      if (!panel.hidden && !panel.contains(event.target) && !toggle.contains(event.target)) {
+        closePanel();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closePanel();
+        toggle?.focus();
+      }
+    });
 
     document.getElementById("accessibleMode")?.addEventListener("click", () => {
       state = {
