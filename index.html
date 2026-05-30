@@ -5,14 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Dashboard interactivo académico del proyecto Respira Nou Barris para la convocatoria UNIR.">
     <title>Respira Nou Barris | Dashboard interactivo</title>
-    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%230b63ce%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-size=%2732%27 text-anchor=%27middle%27 fill=%27white%27%3E%E2%99%BF%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" href="assets/images/accessibility-icon.png">
     <link rel="preload" href="assets/data/data.json" as="fetch" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/accessibility.css">
     <link rel="stylesheet" href="css/animations.css">
     <style>
-      .brand-block{gap:.85rem;justify-items:start}.brand-block img{width:164px;padding:.65rem .82rem;box-shadow:0 18px 34px rgba(0,0,0,.22)}.brand-kicker{max-width:17rem;color:#e8f2ff;font-size:.74rem;line-height:1.35;letter-spacing:.05em}.group-mini{display:grid;gap:.7rem;padding:1rem;border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);background:linear-gradient(135deg,rgba(0,166,166,.14),rgba(255,107,53,.08)),rgba(255,255,255,.08)}.group-mini p{margin:0;color:#aeb9d1;font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.group-mini ul{display:grid;gap:.42rem;margin:0;padding:0;list-style:none}.group-mini li{color:#fff;font-size:.9rem;font-weight:760;line-height:1.25}.topbar{grid-template-columns:auto max-content minmax(220px,1fr) auto}.barcelona-skyline{min-width:220px;height:38px;align-self:center;opacity:.95}.barcelona-skyline svg{width:100%;height:100%;display:block}.skyline-line,.skyline-accent,.skyline-glow{fill:none;stroke-linecap:round;stroke-linejoin:round}.skyline-glow{stroke:rgba(0,87,255,.12);stroke-width:10}.skyline-line{stroke:#0a4fa4;stroke-width:3.4;stroke-dasharray:760;stroke-dashoffset:760;animation:drawSkyline 1800ms ease-out 180ms forwards}.skyline-accent{stroke:#00a6a6;stroke-width:2.2;opacity:.9;stroke-dasharray:180;stroke-dashoffset:180;animation:drawSkyline 1200ms ease-out 720ms forwards}.hero-media{position:relative}.hero-media img{aspect-ratio:16/11;object-position:center 42%;transform:scale(1.015);transition:transform 900ms cubic-bezier(.2,.8,.2,1),filter 700ms ease}.hero-media::after{position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(0,87,255,.18),rgba(0,166,166,.02) 48%,rgba(255,107,53,.16)),radial-gradient(circle at 20% 12%,rgba(255,255,255,.28),transparent 30%);content:"";animation:lightSweep 4800ms ease-in-out infinite alternate}.hero-media:hover img{transform:scale(1.06);filter:saturate(1.08) contrast(1.04)}.hero-media figcaption{position:relative;z-index:1}.photo-card img{object-position:center center}.photo-card.large img{object-position:46% center}.photo-card:nth-child(2) img{object-position:center 40%}.photo-card:nth-child(3) img{object-position:center 46%}.photo-card::after{position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.22) 48%,transparent 62%);transform:translateX(-130%);transition:transform 700ms ease;content:""}.photo-card:hover::after{transform:translateX(130%)}@keyframes drawSkyline{to{stroke-dashoffset:0}}@keyframes lightSweep{from{opacity:.72}to{opacity:.95}}@media(max-width:900px){.topbar{grid-template-columns:auto 1fr auto}.barcelona-skyline{display:none}}
+      .brand-kicker {
+        max-width: 17rem;
+        color: #e8f2ff;
+        font-size: 0.76rem;
+        line-height: 1.3;
+        letter-spacing: 0.02em;
+      }
+      .group-mini li {
+        font-size: 0.82rem;
+        line-height: 1.22;
+      }
+      .topbar {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        left: auto;
+        min-height: 0;
+        display: block;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        backdrop-filter: none;
+        z-index: 80;
+      }
+      .accessibility-trigger {
+        width: 52px;
+        height: 52px;
+        min-height: 52px;
+        padding: 0;
+        border-radius: 50%;
+        background: #ffffff;
+        box-shadow: 0 18px 42px rgba(10, 31, 68, 0.22);
+      }
+      .accessibility-trigger img {
+        width: 30px;
+        height: 30px;
+        display: block;
+      }
+      .accessibility-panel {
+        right: 0;
+        top: calc(100% + 0.75rem);
+      }
+      .hero {
+        min-height: min(58vh, 540px);
+        padding: 0.6rem 0 1.2rem;
+      }
+      .hero-media img {
+        aspect-ratio: 16 / 10;
+        max-height: 300px;
+        object-fit: cover;
+        object-position: center 52%;
+      }
+      #context-diagram {
+        width: 100%;
+        max-height: 640px;
+        padding: 0.5rem;
+        background: #ffffff;
+      }
+      @media (max-width: 900px) {
+        .topbar {
+          top: 0.75rem;
+          right: 0.75rem;
+        }
+        .hero {
+          min-height: auto;
+          padding: 0.8rem 0 1rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -21,8 +88,9 @@
     <div class="app-shell">
       <aside class="sidebar" aria-label="Navegación del dashboard">
         <div class="brand-block">
-          <img src="https://raw.githubusercontent.com/carlosarandabcn-80/infografia-interactiva/main/assets/unir-logo.svg" alt="UNIR, La Universidad en Internet" width="139" height="107">
-          <span class="brand-kicker">Desarrollo Humano y Educación Social</span>
+          <img src="assets/images/logo-unir.png" alt="UNIR, La Universidad en Internet" width="139" height="107">
+          <span class="brand-kicker">Grado de Educación Social<br>Estructura Social</span>
+          <span class="brand-project">Respira Nou Barris</span>
         </div>
 
         <nav class="main-nav" aria-label="Secciones principales">
@@ -39,17 +107,16 @@
           <a href="#impacto" class="nav-link">Impacto</a>
           <a href="#presupuesto" class="nav-link">Presupuesto</a>
           <a href="#referencias" class="nav-link">Referencias APA</a>
-          <a href="#aprendizajes" class="nav-link">Aprendizajes grupo</a>
         </nav>
 
         <div class="group-mini" aria-labelledby="group-title">
           <p id="group-title">Equipo proponente</p>
           <ul>
-            <li>Aranda, Carlos</li>
-            <li>Edwards, Rebeca Ruth Ziegler</li>
-            <li>Úrsula</li>
-            <li>Yeissy</li>
-            <li>Yolanda</li>
+            <li>Aranda Sánchez, Carlos</li>
+            <li>Martínez Ruiz, Úrsula</li>
+            <li>Pavón Torres, Yolanda</li>
+            <li>Saavedra Farías, Yeissy Sorana</li>
+            <li>Ziegler Edwards, Rebeca Ruth</li>
           </ul>
         </div>
       </aside>
@@ -60,27 +127,9 @@
             <span aria-hidden="true">☰</span>
           </button>
 
-          <div class="topbar-title">
-            <span class="project-status-dot" aria-hidden="true"></span>
-            <span>Respira Nou Barris</span>
-          </div>
-
-          <div class="barcelona-skyline" aria-hidden="true">
-            <svg viewBox="0 0 720 64" role="img" focusable="false">
-              <path class="skyline-glow" d="M8 54H712" />
-              <path class="skyline-line" d="M8 54H62V42H76V28H86V42H103V36H129V18H145V36H162V48H194V38H207V24H217V38H232V54H276V32H288V20H300V32H312V54H346V41H360V26H374V41H392V54H436V34H450V22H464V34H479V54H514V43H529V31H546V43H561V54H601V39H616V29H629V39H646V54H712" />
-              <path class="skyline-accent" d="M112 54C126 46 136 45 151 54M253 54C267 42 285 42 302 54M493 54C511 43 532 43 552 54" />
-            </svg>
-          </div>
-
-          <div class="topbar-progress" aria-hidden="true">
-            <span id="scrollProgress"></span>
-          </div>
-
           <div class="accessibility-hub">
-            <button class="accessibility-trigger" id="accessibilityToggle" type="button" aria-expanded="false" aria-controls="accessibilityPanel">
-              <span aria-hidden="true">♿</span>
-              <span>Accesibilidad</span>
+            <button class="accessibility-trigger" id="accessibilityToggle" type="button" aria-label="Abrir opciones de accesibilidad" aria-expanded="false" aria-controls="accessibilityPanel">
+              <img src="assets/images/accessibility-icon.png" alt="" aria-hidden="true">
             </button>
             <div class="accessibility-panel" id="accessibilityPanel" role="dialog" aria-label="Opciones de accesibilidad digital" hidden>
               <div class="accessibility-panel-head">
@@ -100,7 +149,7 @@
                 <span class="switch-ui" aria-hidden="true"></span>
               </button>
               <div class="text-controls" role="group" aria-label="Tamaño del texto">
-                <spanTamaño de texto</span>
+                <span>Tamaño de texto</span>
                 <div>
                   <button type="button" id="textDecrease" aria-label="Reducir tamaño del texto">A−</button>
                   <button type="button" id="textReset" aria-label="Restablecer tamaño del texto">A</button>
@@ -125,7 +174,6 @@
           <a href="#impacto">Impacto</a>
           <a href="#presupuesto">Presupuesto</a>
           <a href="#referencias">Referencias APA</a>
-          <a href="#aprendizajes">Aprendizajes grupo</a>
         </nav>
 
         <main id="main-content" tabindex="-1">
@@ -138,8 +186,8 @@
             </div>
             <div class="hero-panel" aria-label="Resumen ejecutivo del proyecto">
               <figure class="hero-media">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Parc_Central_Nou_Barris_%287185960105%29.jpg" alt="Parc Central de Nou Barris, espacio comunitario del distrito de intervención." width="2400" height="1600" fetchpriority="high">
-                <figcaption>Territorio de intervención: Parc Central de Nou Barris.</figcaption>
+                <img src="assets/images/photos/hero-ai-respira-nou-barris.jpg" alt="Jóvenes en un espacio urbano de Nou Barris con Barcelona al fondo, en un contexto de convivencia comunitaria." width="1920" height="1080" fetchpriority="high">
+                <figcaption><small>Imagen de portada creada con IA para uso académico interno del proyecto.</small></figcaption>
               </figure>
               <div class="pulse-card">
                 <span class="pulse-label">Población base</span>
@@ -155,30 +203,16 @@
             </div>
           </section>
 
-          <section class="section reveal" aria-labelledby="kpi-title">
-            <div class="section-heading compact">
-              <p class="eyebrow">Lectura ejecutiva</p>
-              <h2 id="kpi-title">Indicadores clave</h2>
-            </div>
-            <div class="kpi-grid" id="kpi-grid" aria-live="polite"></div>
-            <div class="rubric-panel" aria-labelledby="rubric-panel-title">
-              <h3 id="rubric-panel-title">Matriz de cumplimiento UNIR</h3>
-              <div class="rubric-grid" id="rubric-grid"></div>
-            </div>
-          </section>
-
           <section class="section reveal" id="contexto" aria-labelledby="contexto-title">
             <div class="section-heading">
               <p class="eyebrow">01</p>
               <h2 id="contexto-title">Contexto</h2>
             </div>
-            <div class="two-column">
-              <div class="prose" id="context-content"></div>
-              <figure class="media-frame">
-                <img id="context-diagram" src="assets/images/charts/contexto-territorial.png" alt="" loading="lazy">
+            <div class="prose" id="context-content"></div>
+            <figure class="media-frame">
+                <img id="context-diagram" src="assets/images/charts/contexto-territorial.svg" alt="" loading="lazy">
                 <figcaption>Diagrama de contexto territorial del problema.</figcaption>
-              </figure>
-            </div>
+            </figure>
             <div class="info-grid" id="context-cards"></div>
           </section>
 
@@ -190,24 +224,27 @@
             </div>
             <div class="photo-grid">
               <figure class="photo-card large">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/186_Institut_Nou_Barris%2C_c._Badosa_10-18_%28Barcelona%29.jpg" alt="Fachada del Institut Nou Barris, centro educativo de referencia para la intervención con adolescentes." loading="lazy" width="2200" height="1650">
+                <img src="assets/images/photos/community-resilience-bw.jpg" alt="Grupo de adolescentes en conversación con una educadora en un entorno comunitario de barrio." loading="lazy" width="1800" height="1032">
                 <figcaption>
-                  <span>Entorno escolar</span>
-                  Institut Nou Barris como base para prevención, detección y acompañamiento.
+                  <span>Acompañamiento comunitario</span>
+                  Vínculo educativo y escucha activa como base de la prevención socioemocional.
+                  <small>Imagen creada con IA para uso académico interno.</small>
                 </figcaption>
               </figure>
               <figure class="photo-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Hospital_Mental_de_la_Santa_Creu_-_seu_del_districte_de_Nou_Barris_P1520529.jpg" alt="Antiguo Hospital Mental de la Santa Creu, actual sede del distrito de Nou Barris." loading="lazy" width="2200" height="1650">
+                <img src="assets/images/photos/peer-support-bw.jpg" alt="Adolescentes participando en un espacio de apoyo entre iguales en contexto educativo." loading="lazy" width="1800" height="1032">
                 <figcaption>
-                  <span>Memoria comunitaria</span>
-                  Equipamientos de proximidad y salud mental en clave no estigmatizante.
+                  <span>Apoyo entre iguales</span>
+                  Espacios seguros para expresión emocional, pertenencia y ayuda mutua.
+                  <small>Imagen creada con IA para uso académico interno.</small>
                 </figcaption>
               </figure>
               <figure class="photo-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Vista_de_Torre_Bar%C3%B3_-_20210801_190720.jpg" alt="Vista de Torre Baró y el paisaje urbano de Nou Barris." loading="lazy" width="2200" height="1237">
+                <img src="assets/images/photos/hero-parc-nou-barris-2400.jpg" alt="Entorno urbano y espacio verde de Nou Barris como escenario territorial del proyecto." loading="lazy" width="2400" height="1530">
                 <figcaption>
-                  <span>Desigualdad territorial</span>
-                  Lectura del barrio como contexto de desarrollo, redes y oportunidades.
+                  <span>Contexto territorial</span>
+                  Lectura urbana de Nou Barris como ecosistema de intervención socioeducativa.
+                  <small>Archivo visual propio del proyecto (uso académico interno).</small>
                 </figcaption>
               </figure>
             </div>
@@ -388,14 +425,6 @@
             <ol class="references-list" id="references-list"></ol>
           </section>
 
-          <section class="section reveal" id="aprendizajes" aria-labelledby="aprendizajes-title">
-            <div class="section-heading">
-              <p class="eyebrow">13</p>
-              <h2 id="aprendizajes-title">Aprendizajes del grupo</h2>
-              <p class="section-intro">Registro de acciones y aprendizajes alineado con la rúbrica de la actividad.</p>
-            </div>
-            <div class="learning-grid" id="learning-grid"></div>
-          </section>
         </main>
       </div>
     </div>
@@ -406,8 +435,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
     <script src="js/accessibility.js" defer></script>
     <script src="js/navigation.js" defer></script>
-    <script src="js/interactions.js" defer></script>
+    <script src="js/interactions.js?v=20260530b" defer></script>
     <script src="js/charts.js" defer></script>
-    <script src="js/app.js" defer></script>
+    <script src="js/app.js?v=20260530b" defer></script>
   </body>
 </html>
