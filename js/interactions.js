@@ -142,6 +142,15 @@
     "Saavedra Farías, Yeissy Sorana",
     "Ziegler Edwards, Rebeca Ruth"
   ];
+  const justificationParagraphs = [
+    "La justificación se alinea con la asignatura porque interpreta la ansiedad y la depresión adolescente como problemas de desarrollo multidimensional, contextual y multicausal.",
+    "La adolescencia implica cambios en maduración cerebral, identidad, autoconcepto, relación con iguales y autonomía familiar; por tanto, un proyecto socioeducativo no debe limitarse a derivar casos clínicos, sino crear condiciones protectoras en el entorno cotidiano.",
+    "En términos de ciclo vital, la intervención temprana aprovecha la plasticidad del desarrollo y puede fortalecer recursos de afrontamiento, vínculos prosociales y participación comunitaria antes de que el malestar se cronifique.",
+    "El proyecto responde a necesidades sociales concretas: desestigmatizar el malestar emocional, crear alternativas de ocio saludable y comunitario, educar en gestión digital y autoestima, ofrecer apoyo psicológico de proximidad y fortalecer vínculos familiares.",
+    "La elección de Nou Barris se justifica por la relación entre desigualdad territorial, vulnerabilidad socioeconómica y exposición adolescente a factores de riesgo como aislamiento, presión estética, uso problemático de redes, absentismo o baja disponibilidad de apoyos. Desde el enfoque ecológico, intervenir en el barrio permite actuar sobre microsistemas reales: instituto, familia, grupo de iguales, equipamientos juveniles y recursos comunitarios.",
+    "La propuesta es coherente con la rúbrica UNIR porque define territorio, población destinataria, problema, marco teórico, objetivos, metodología, actividades, impacto, presupuesto y referencias APA. Además, transforma el contenido académico en un producto visual accesible, con datos, gráficos, tablas alternativas y navegación clara.",
+    "Respira Nou Barris no plantea una respuesta asistencial aislada, sino una intervención preventiva de seis meses orientada a generar resiliencia: aumentar la competencia emocional, reforzar la percepción de apoyo, activar referentes adolescentes, mejorar la coordinación entre agentes y facilitar la derivación responsable ante señales de riesgo."
+  ];
 
   function ensureStyle() {
     if (document.getElementById("respira-final-hotfix")) return;
@@ -232,6 +241,15 @@
     const lead = document.getElementById("home-lead");
     if (lead) {
       lead.textContent = "Respira Nou Barris acompaña a adolescentes de 12 a 17 años mediante educación emocional, apoyo entre iguales, orientación familiar y conexión con recursos del barrio para prevenir ansiedad y depresión desde una mirada ecológica, inclusiva y no estigmatizante.";
+    }
+
+    const justification = document.getElementById("justification-content");
+    if (justification) {
+      justification.replaceChildren(...justificationParagraphs.map((text) => {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = text;
+        return paragraph;
+      }));
     }
   }
 
