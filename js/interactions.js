@@ -106,7 +106,25 @@
     });
   }
 
+  function injectQuickStyle() {
+    if (document.getElementById("respira-hotfix-style")) return;
+    const style = document.createElement("style");
+    style.id = "respira-hotfix-style";
+    style.textContent = `
+      .topbar{position:fixed;top:1rem;right:1rem;left:auto;min-height:0;display:block;padding:0;border:0;background:transparent;backdrop-filter:none;z-index:80}
+      .topbar-title,.barcelona-skyline,.topbar-progress{display:none!important}
+      .accessibility-trigger{width:52px;height:52px;min-height:52px;padding:0;border-radius:50%;background:#fff;box-shadow:0 18px 42px rgba(10,31,68,.22)}
+      .accessibility-trigger span{display:none!important}
+      .accessibility-trigger img{width:30px;height:30px;display:block}
+      .accessibility-panel{right:0;top:calc(100% + .75rem)}
+      @media(max-width:900px){.topbar{top:.75rem;right:.75rem}}
+    `;
+    document.head.append(style);
+  }
+
   function applyDomFixes() {
+    injectQuickStyle();
+
     const logo = document.querySelector(".brand-block img");
     if (logo) logo.src = "assets/images/logo-unir.png";
 
@@ -133,6 +151,13 @@
       icon.alt = "";
       icon.setAttribute("aria-hidden", "true");
       accessibilityButton.append(icon);
+    }
+
+    const textControls = document.querySelector(".text-controls");
+    if (textControls && !textControls.querySelector("span")) {
+      const label = document.createElement("span");
+      label.textContent = "Tamaño de texto";
+      textControls.prepend(label);
     }
 
     document.querySelectorAll('a[href="#aprendizajes"], #aprendizajes, [aria-labelledby="kpi-title"]').forEach((node) => node.remove());
