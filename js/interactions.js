@@ -124,23 +124,34 @@
       }
     }
 
+    const accessibilityButton = document.getElementById("accessibilityToggle");
+    if (accessibilityButton) {
+      accessibilityButton.replaceChildren();
+      accessibilityButton.setAttribute("aria-label", "Abrir opciones de accesibilidad");
+      const icon = document.createElement("img");
+      icon.src = "assets/images/accessibility-icon.png";
+      icon.alt = "";
+      icon.setAttribute("aria-hidden", "true");
+      accessibilityButton.append(icon);
+    }
+
     document.querySelectorAll('a[href="#aprendizajes"], #aprendizajes, [aria-labelledby="kpi-title"]').forEach((node) => node.remove());
 
     const heroImage = document.querySelector(".hero-media img");
     if (heroImage) {
-      heroImage.src = "assets/images/photos/hero-resilience-bw.jpg";
-      heroImage.alt = "Adolescentes y educadora social en Nou Barris durante una dinámica de apoyo comunitario.";
+      heroImage.src = "https://upload.wikimedia.org/wikipedia/commons/2/24/Parc_Central_Nou_Barris_%287185960105%29.jpg";
+      heroImage.alt = "Parc Central de Nou Barris, espacio comunitario del distrito de intervención.";
     }
 
     const heroCaption = document.querySelector(".hero-media figcaption");
     if (heroCaption) {
-      heroCaption.innerHTML = "<small>Imagen generada con IA para esta propuesta académica: resiliencia adolescente y acompañamiento socioeducativo.</small>";
+      heroCaption.textContent = "Territorio de intervención: Parc Central de Nou Barris.";
     }
 
     const photoMap = [
-      [".photo-card.large img", "assets/images/photos/community-resilience-bw.jpg", "Grupo de adolescentes con educadora social en un espacio comunitario de Nou Barris."],
-      [".photo-card:not(.large):nth-of-type(2) img", "assets/images/photos/peer-support-bw.jpg", "Círculo de apoyo entre iguales para prevención de ansiedad y depresión adolescente."],
-      [".photo-card:not(.large):nth-of-type(3) img", "assets/images/photos/torre-baro-nou-barris-2200.jpg", "Vista territorial de Nou Barris y Barcelona para contextualizar desigualdad y entorno social."]
+      [".photo-card.large img", "https://upload.wikimedia.org/wikipedia/commons/3/34/186_Institut_Nou_Barris%2C_c._Badosa_10-18_%28Barcelona%29.jpg", "Fachada del Institut Nou Barris, centro educativo de referencia para la intervención con adolescentes."],
+      [".photo-card:not(.large):nth-of-type(2) img", "https://upload.wikimedia.org/wikipedia/commons/a/a2/Hospital_Mental_de_la_Santa_Creu_-_seu_del_districte_de_Nou_Barris_P1520529.jpg", "Antiguo Hospital Mental de la Santa Creu, actual sede del distrito de Nou Barris."],
+      [".photo-card:not(.large):nth-of-type(3) img", "https://upload.wikimedia.org/wikipedia/commons/8/8e/Vista_de_Torre_Bar%C3%B3_-_20210801_190720.jpg", "Vista de Torre Baró y el paisaje urbano de Nou Barris."]
     ];
 
     photoMap.forEach(([selector, src, alt]) => {
