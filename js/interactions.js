@@ -129,12 +129,18 @@
 })();
 
 (function () {
-  const version = "20260529c";
   const images = [
-    [".hero-media img", `assets/images/photos/hero-ai-respira-nou-barris.svg?v=${version}`, "Ilustración generada con IA de Nou Barris como entorno comunitario de bienestar adolescente."],
-    [".photo-card.large img", `assets/images/photos/school-community.svg?v=${version}`, "Ilustración de un instituto y adolescentes en un entorno comunitario de Nou Barris."],
-    [".photo-card:not(.large):nth-of-type(2) img", `assets/images/photos/mental-health-network.svg?v=${version}`, "Ilustración de red comunitaria, apoyo emocional y recursos de salud mental de proximidad."],
-    [".photo-card:not(.large):nth-of-type(3) img", `assets/images/photos/barcelona-nou-barris.svg?v=${version}`, "Ilustración del paisaje urbano de Barcelona con skyline y colinas de Nou Barris."]
+    [".hero-media img", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/A_group_of_students.jpg/1280px-A_group_of_students.jpg", "Fotografía real de estudiantes adolescentes en contexto educativo, tratada visualmente en blanco y negro."],
+    [".photo-card.large img", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Students_outside_.jpg/1280px-Students_outside_.jpg", "Fotografía real en blanco y negro de adolescentes aprendiendo en un entorno exterior."],
+    [".photo-card:not(.large):nth-of-type(2) img", "https://commons.wikimedia.org/wiki/Special:Redirect/file/Teenagers%20gathered%20around%20campfire%20at%20summer%20camp%20%287736437820%29.jpg", "Fotografía real en blanco y negro de adolescentes reunidos en un espacio comunitario."],
+    [".photo-card:not(.large):nth-of-type(3) img", "https://upload.wikimedia.org/wikipedia/commons/a/a2/Blau-Weiss_youth_group_%284923336845%29.jpg", "Fotografía real en blanco y negro de un grupo juvenil como representación de comunidad y resiliencia."]
+  ];
+  const participantNames = [
+    "Aranda Sánchez, Carlos",
+    "Martínez Ruiz, Úrsula",
+    "Pavón Torres, Yolanda",
+    "Saavedra Farías, Yeissy Sorana",
+    "Ziegler Edwards, Rebeca Ruth"
   ];
 
   function ensureStyle() {
@@ -142,8 +148,10 @@
     const style = document.createElement("style");
     style.id = "respira-final-hotfix";
     style.textContent = `
-      .app-shell{background:#dfeeff}
-      .sidebar{overflow-y:auto;scrollbar-width:thin}
+      .app-shell{background:#0a1020!important}
+      body{background:#0a1020!important;color:#edf3ff!important}
+      .page{background:linear-gradient(135deg,#0a1020 0%,#101b33 48%,#07141f 100%)!important}
+      .sidebar{overflow-y:auto;scrollbar-width:thin;background:#090f1f!important;border-right:1px solid rgba(255,255,255,.09)!important}
       .brand-block{gap:.62rem!important}
       .brand-block img{width:172px!important;max-width:100%;height:auto!important;object-fit:contain}
       .brand-kicker{font-size:.72rem!important;line-height:1.28!important;letter-spacing:.025em!important;color:#f2f7ff!important}
@@ -152,22 +160,31 @@
       .group-mini{padding:.85rem!important;gap:.45rem!important}
       .group-mini p{font-size:.66rem!important}
       .group-mini li{font-size:.72rem!important;line-height:1.18!important;font-weight:720!important}
-      .topbar{position:fixed;top:1rem;right:1rem;left:auto;min-height:0;display:block;padding:0;border:0;background:transparent;backdrop-filter:none;z-index:80}
-      .topbar-title,.barcelona-skyline,.topbar-progress{display:none!important}
+      .topbar{position:fixed;top:1rem;left:calc(280px + 1rem);right:auto;min-height:0;display:block;padding:0;border:0;background:transparent;backdrop-filter:none;z-index:80}
+      .topbar-title,.barcelona-skyline,.topbar-progress,.menu-toggle{display:none!important}
       .accessibility-trigger{width:52px;height:52px;min-height:52px;padding:0;border-radius:50%;background:#fff;box-shadow:0 18px 42px rgba(10,31,68,.22)}
       .accessibility-trigger img{width:30px;height:30px;display:block}
       .accessibility-trigger span{display:none}
       .accessibility-panel{right:0;top:calc(100% + .75rem)}
-      .hero{min-height:calc(100vh - 1px);display:grid!important;grid-template-columns:minmax(0,1fr) minmax(340px,.82fr)!important;align-items:center!important;gap:clamp(1.5rem,4vw,4rem)!important;padding:clamp(2.5rem,5vw,5rem)!important}
+      .hero{min-height:calc(100vh - 1px);display:grid!important;grid-template-columns:minmax(0,1fr) minmax(360px,.9fr)!important;align-items:center!important;gap:clamp(1.5rem,4vw,4rem)!important;padding:clamp(3.5rem,6vw,6rem)!important;background:radial-gradient(circle at 18% 20%,rgba(0,166,166,.18),transparent 28%),linear-gradient(135deg,rgba(9,15,31,.96),rgba(14,26,49,.94))!important}
       .hero-content{align-self:center!important;max-width:760px!important;transform:none!important}
       .hero-content .eyebrow{margin-top:0!important}
-      .hero-panel{align-self:center!important;max-width:560px!important;width:100%!important}
-      .hero-media{border-radius:18px!important;overflow:hidden!important;background:#fff!important;box-shadow:0 28px 80px rgba(10,31,68,.18)!important}
-      .hero-media img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:18/11!important;object-fit:cover!important;object-position:center center!important;opacity:1!important;filter:none!important}
+      .hero h1,.section h2{color:#f8fbff!important}
+      .hero .lead,.hero li,.section-intro,.prose p{color:#cbd7ea!important}
+      .hero-panel{align-self:center!important;max-width:620px!important;width:100%!important}
+      .hero-media{border-radius:10px!important;overflow:hidden!important;background:#111827!important;box-shadow:0 28px 90px rgba(0,0,0,.42)!important;border:1px solid rgba(255,255,255,.14)!important}
+      .hero-media img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:16/10!important;object-fit:cover!important;object-position:center center!important;opacity:1!important;filter:grayscale(1) contrast(1.08)!important}
       .hero-media::after{display:none!important}
-      .photo-card img,.media-frame img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:1!important}
+      .photo-card img,.media-frame img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:1!important;filter:grayscale(1) contrast(1.06)!important}
+      .section:not(.hero){max-width:min(1180px,calc(100vw - 330px))!important;margin:2rem auto!important;padding:clamp(1.25rem,3vw,2.4rem)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:14px!important;background:linear-gradient(145deg,rgba(17,27,50,.94),rgba(10,16,32,.9))!important;box-shadow:0 24px 70px rgba(0,0,0,.28)!important;overflow:hidden!important}
+      .kpi-card,.info-card,.chart-card,.activity-card,.impact-card,.check-panel,.objective-card,.rubric-panel,.media-frame,.photo-card{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.13)!important;color:#edf3ff!important}
+      .pulse-card{background:rgba(255,255,255,.08)!important;color:#edf3ff!important;border:1px solid rgba(255,255,255,.13)!important}
+      .pulse-card strong{color:#9edcff!important}
+      .mini-timeline span{background:rgba(255,255,255,.08)!important;color:#f8fbff!important;border:1px solid rgba(255,255,255,.13)!important}
+      .eyebrow{color:#45d4d0!important}
+      table,td,th{color:#edf3ff!important}
       @media(max-width:1100px){.hero{grid-template-columns:1fr!important;padding:2rem!important}.hero-panel{max-width:720px!important}}
-      @media(max-width:900px){.topbar{top:.75rem;right:.75rem}.hero{padding:1.5rem!important}}
+      @media(max-width:900px){.topbar{top:.75rem;left:auto;right:.75rem}.hero{padding:1.5rem!important}.section:not(.hero){max-width:calc(100vw - 2rem)!important}}
     `;
     document.head.append(style);
   }
@@ -177,6 +194,15 @@
 
     const brandKicker = document.querySelector(".brand-kicker");
     if (brandKicker) brandKicker.textContent = "Estructura Social - Grado en Educación Social.";
+
+    const groupList = document.querySelector(".group-mini ul");
+    if (groupList) {
+      groupList.replaceChildren(...participantNames.map((name) => {
+        const item = document.createElement("li");
+        item.textContent = name;
+        return item;
+      }));
+    }
 
     const brandBlock = document.querySelector(".brand-block");
     if (brandBlock && !brandBlock.querySelector(".brand-project")) {
@@ -198,7 +224,15 @@
     });
 
     const caption = document.querySelector(".hero-media figcaption");
-    if (caption) caption.textContent = "Imagen generada con IA: bienestar adolescente, comunidad y territorio de Nou Barris.";
+    if (caption) caption.textContent = "Imagen documental en blanco y negro: adolescencia, aprendizaje compartido y resiliencia comunitaria.";
+
+    const eyebrow = document.getElementById("home-eyebrow");
+    if (eyebrow) eyebrow.textContent = "Intervención socioeducativa comunitaria";
+
+    const lead = document.getElementById("home-lead");
+    if (lead) {
+      lead.textContent = "Respira Nou Barris acompaña a adolescentes de 12 a 17 años mediante educación emocional, apoyo entre iguales, orientación familiar y conexión con recursos del barrio para prevenir ansiedad y depresión desde una mirada ecológica, inclusiva y no estigmatizante.";
+    }
   }
 
   document.addEventListener("DOMContentLoaded", () => {
