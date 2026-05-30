@@ -1,22 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
-  <title id="title">Red de salud mental de proximidad</title>
-  <desc id="desc">Ilustración de red comunitaria, apoyo emocional y recursos de proximidad.</desc>
-  <rect width="1200" height="800" fill="#eef6ff"/>
-  <circle cx="610" cy="390" r="220" fill="#d8f3f0"/>
-  <path d="M420 420 C520 260 720 260 810 420 C745 560 500 560 420 420Z" fill="#ffffff"/>
-  <path d="M490 420 C560 330 685 330 745 420 C690 500 550 500 490 420Z" fill="#0a4fa4" opacity=".14"/>
-  <circle cx="610" cy="420" r="54" fill="#00a6a6"/>
-  <g stroke="#0a4fa4" stroke-width="8" stroke-linecap="round" opacity=".75">
-    <path d="M610 420 335 270"/>
-    <path d="M610 420 880 245"/>
-    <path d="M610 420 900 600"/>
-    <path d="M610 420 310 580"/>
+  <title id="title">Red comunitaria de salud mental</title>
+  <desc id="desc">Ilustracion de una red de apoyo emocional y recursos de proximidad.</desc>
+  <rect width="1200" height="800" fill="#eaf4ff"/>
+  <circle cx="610" cy="390" r="245" fill="#d5f3ef"/>
+  <path d="M420 430 C520 250 725 250 818 430 C748 585 500 585 420 430Z" fill="#ffffff"/>
+  <path d="M500 432 C570 330 690 330 756 432 C700 520 555 520 500 432Z" fill="#0b5ed7" opacity=".12"/>
+  <g stroke="#0b5ed7" stroke-width="10" stroke-linecap="round" opacity=".82">
+    <path d="M610 422 330 250"/>
+    <path d="M610 422 890 230"/>
+    <path d="M610 422 925 602"/>
+    <path d="M610 422 292 590"/>
   </g>
-  <g fill="#ffffff" stroke="#0a4fa4" stroke-width="8">
-    <circle cx="335" cy="270" r="48"/>
-    <circle cx="880" cy="245" r="48"/>
-    <circle cx="900" cy="600" r="48"/>
-    <circle cx="310" cy="580" r="48"/>
+  <circle cx="610" cy="422" r="60" fill="#00a6a6"/>
+  <g fill="#ffffff" stroke="#0b5ed7" stroke-width="9">
+    <circle cx="330" cy="250" r="54"/>
+    <circle cx="890" cy="230" r="54"/>
+    <circle cx="925" cy="602" r="54"/>
+    <circle cx="292" cy="590" r="54"/>
   </g>
-  <path d="M250 705 C430 620 760 625 950 705" fill="none" stroke="#ff6b35" stroke-width="12" stroke-linecap="round"/>
+  <path d="M250 705 C430 612 760 620 950 705" fill="none" stroke="#ff6b35" stroke-width="14" stroke-linecap="round"/>
+  <path d="M555 410c34-52 92-52 126 0-10 42-116 42-126 0z" fill="#13213a" opacity=".85"/>
 </svg>

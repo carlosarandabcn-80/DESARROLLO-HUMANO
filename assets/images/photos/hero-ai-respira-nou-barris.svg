@@ -1,46 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
-  <title id="title">Respira Nou Barris, bienestar adolescente y comunidad</title>
-  <desc id="desc">Ilustración editorial generada para representar Nou Barris, salud emocional adolescente, espacios verdes y red comunitaria.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Respira Nou Barris, comunidad y bienestar adolescente</title>
+  <desc id="desc">Ilustracion editorial de Barcelona y Nou Barris con adolescentes, zonas verdes y red comunitaria.</desc>
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#dcecff"/>
-      <stop offset=".52" stop-color="#eef6ff"/>
-      <stop offset="1" stop-color="#c7f1ee"/>
+      <stop offset="0" stop-color="#b8d7ff"/>
+      <stop offset=".44" stop-color="#eef7ff"/>
+      <stop offset="1" stop-color="#b6efe4"/>
     </linearGradient>
-    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0a4fa4"/>
-      <stop offset=".42" stop-color="#00a6a6"/>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0b5ed7"/>
+      <stop offset=".52" stop-color="#00a6a6"/>
       <stop offset="1" stop-color="#ff6b35"/>
     </linearGradient>
-    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="28"/>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#08204a" flood-opacity=".18"/>
     </filter>
   </defs>
-  <rect width="1800" height="1050" fill="url(#sky)"/>
-  <circle cx="1420" cy="190" r="92" fill="#fff7d1" opacity=".75"/>
-  <g opacity=".72" filter="url(#soft)">
-    <ellipse cx="510" cy="230" rx="220" ry="62" fill="#ffffff"/>
-    <ellipse cx="980" cy="315" rx="280" ry="78" fill="#ffffff"/>
+  <rect width="1800" height="1100" fill="url(#sky)"/>
+  <circle cx="1430" cy="170" r="96" fill="#fff4bd" opacity=".9"/>
+  <path d="M0 680 C240 570 420 630 630 555 C880 466 1080 555 1280 470 C1480 384 1640 440 1800 350 V1100 H0Z" fill="#d7efe7"/>
+  <path d="M0 775 C300 692 545 740 760 655 C1020 552 1240 665 1470 570 C1605 512 1710 526 1800 490 V1100 H0Z" fill="#94d8ca"/>
+  <path d="M0 910 C265 825 510 870 760 800 C1018 727 1265 850 1510 735 C1648 670 1740 704 1800 665 V1100 H0Z" fill="#48b9aa"/>
+  <g fill="#13213a" filter="url(#shadow)">
+    <rect x="1010" y="455" width="86" height="285" rx="8"/>
+    <rect x="1120" y="355" width="105" height="385" rx="8"/>
+    <rect x="1250" y="430" width="76" height="310" rx="8"/>
+    <rect x="1360" y="300" width="124" height="440" rx="8"/>
+    <rect x="1510" y="390" width="100" height="350" rx="8"/>
+    <rect x="1642" y="470" width="78" height="270" rx="8"/>
   </g>
-  <path d="M0 700 C260 610 430 670 650 610 C880 545 1080 608 1260 548 C1465 480 1630 530 1800 455 L1800 1050 L0 1050Z" fill="#d7eee9"/>
-  <path d="M0 780 C280 720 520 760 770 695 C1010 632 1220 700 1420 632 C1580 578 1700 604 1800 565 L1800 1050 L0 1050Z" fill="#b9e2d4"/>
-  <g fill="#17213b" opacity=".92">
-    <path d="M1020 600h70v-160h56v160h52v-220h78v220h48v-135h68v135h72v-190h82v190h64v-115h72v260h-662z"/>
-    <path d="M1180 375h20v-56h26v56h22v-78h32v78h24v-42h28v42h26v32h-178z" fill="#0a4fa4"/>
+  <path d="M930 352h24v-58h35v58h31v-88h42v88h36v-42h34v42h44v42H930z" fill="#0b5ed7"/>
+  <path d="M95 770 C270 638 470 650 662 764 C830 862 1012 858 1190 756 C1390 640 1585 648 1740 740" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round" opacity=".58"/>
+  <path d="M120 788 C290 655 480 675 670 780 C842 876 1015 866 1186 766 C1374 656 1572 666 1720 748" fill="none" stroke="url(#accent)" stroke-width="9" stroke-linecap="round"/>
+  <g transform="translate(235 570)" filter="url(#shadow)">
+    <rect x="0" y="0" width="560" height="270" rx="40" fill="#ffffff" opacity=".9"/>
+    <path d="M72 160c58-74 160-84 246-29 82 52 148 42 204-34" fill="none" stroke="#0b5ed7" stroke-width="16" stroke-linecap="round"/>
+    <path d="M74 204c86-42 166-35 250 8 82 42 152 34 198-14" fill="none" stroke="#00a6a6" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="116" cy="92" r="42" fill="#0b5ed7"/>
+    <circle cx="244" cy="78" r="38" fill="#00a6a6"/>
+    <circle cx="376" cy="98" r="44" fill="#ff6b35"/>
   </g>
-  <path d="M170 730 C330 630 520 630 690 728 C850 818 1020 824 1190 730 C1365 632 1540 636 1695 720" fill="none" stroke="#ffffff" stroke-width="20" opacity=".55"/>
-  <path d="M140 745 C322 638 520 650 694 742 C858 829 1015 828 1184 739 C1372 640 1540 650 1700 730" fill="none" stroke="url(#ground)" stroke-width="7" stroke-linecap="round"/>
-  <g transform="translate(300 620)">
-    <circle cx="95" cy="80" r="44" fill="#0a4fa4"/>
-    <circle cx="190" cy="60" r="38" fill="#00a6a6"/>
-    <circle cx="285" cy="86" r="42" fill="#ff6b35"/>
-    <path d="M45 210c18-60 78-84 126-48 28 20 46 52 56 93H0c7-18 20-34 45-45z" fill="#10203f"/>
-    <path d="M148 210c18-58 76-82 120-48 29 22 47 53 58 93H107c8-18 22-34 41-45z" fill="#173f76"/>
-    <path d="M244 210c17-58 77-82 123-48 30 22 48 53 59 93H204c9-18 23-34 40-45z" fill="#1b6766"/>
-  </g>
-  <g opacity=".96">
-    <rect x="95" y="110" width="500" height="156" rx="34" fill="#ffffff" opacity=".82"/>
-    <path d="M142 196c60-65 141-76 218-35 77 42 140 26 194-34" fill="none" stroke="#0a4fa4" stroke-width="12" stroke-linecap="round"/>
-    <path d="M145 220c80-34 152-25 225 12 72 37 135 32 184-8" fill="none" stroke="#00a6a6" stroke-width="8" stroke-linecap="round"/>
+  <g transform="translate(650 732)">
+    <circle cx="80" cy="52" r="42" fill="#13213a"/>
+    <circle cx="168" cy="38" r="36" fill="#173f76"/>
+    <circle cx="252" cy="58" r="40" fill="#1b6766"/>
+    <path d="M26 170c18-68 92-93 142-48 28 25 44 55 52 94H0c5-18 13-33 26-46z" fill="#0f1c33"/>
+    <path d="M112 170c18-64 86-91 134-48 29 26 47 56 58 94H84c7-18 16-34 28-46z" fill="#173f76"/>
+    <path d="M204 170c18-66 94-92 144-48 30 26 49 56 60 94H176c7-18 16-34 28-46z" fill="#1b6766"/>
   </g>
 </svg>
