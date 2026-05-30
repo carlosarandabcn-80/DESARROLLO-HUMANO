@@ -1,4 +1,128 @@
 (function () {
+  function initReveal() {
+    const items = document.querySelectorAll(".reveal");
+    if (!items.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((item) => item.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    items.forEach((item) => observer.observe(item));
+  }
+
+  function initAccordions(scope = document) {
+    scope.querySelectorAll(".accordion-trigger").forEach((button) => {
+      button.addEventListener("click", () => {
+        const item = button.closest(".accordion-item");
+        const panel = item?.querySelector(".accordion-panel");
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        item?.classList.toggle("open", !expanded);
+        button.setAttribute("aria-expanded", String(!expanded));
+        if (panel) panel.hidden = expanded;
+      });
+    });
+  }
+
+  function initExpandableCards(scope = document) {
+    scope.querySelectorAll(".expand-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".activity-card");
+        const details = card?.querySelector(".activity-details");
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        card?.classList.toggle("open", !expanded);
+        if (details) details.hidden = expanded;
+        const label = expanded ? "Ver detalle" : "Ocultar detalle";
+        button.querySelector("span").textContent = label;
+      });
+    });
+  }
+
+  function initTableToggles(scope = document) {
+    scope.querySelectorAll(".table-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = document.getElementById(button.getAttribute("aria-controls"));
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        button.textContent = expanded ? "Ver tabla accesible" : "Ocultar tabla accesible";
+        if (target) target.hidden = expanded;
+      });
+    });
+  }
+
+  function initScrollProgress() {
+    const progress = document.getElementById("scrollProgress");
+    if (!progress) return;
+
+    const update = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = total > 0 ? window.scrollY / total : 0;
+      progress.style.transform = `scaleX(${Math.min(1, Math.max(0, ratio))})`;
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+  }
+
+  function initMagneticCards(scope = document) {
+    const cards = scope.querySelectorAll(".photo-card, .kpi-card, .chart-card, .activity-card");
+    cards.forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        if (document.body.classList.contains("reduce-motion")) return;
+        const rect = card.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width - 0.5) * 10;
+        const y = ((event.clientY - rect.top) / rect.height - 0.5) * -10;
+        card.style.setProperty("--tilt-x", `${y.toFixed(2)}deg`);
+        card.style.setProperty("--tilt-y", `${x.toFixed(2)}deg`);
+      });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.removeProperty("--tilt-x");
+        card.style.removeProperty("--tilt-y");
+      });
+    });
+  }
+
+  function initAll(scope = document) {
+    initReveal();
+    initScrollProgress();
+    initAccordions(scope);
+    initExpandableCards(scope);
+    initTableToggles(scope);
+    initMagneticCards(scope);
+  }
+
+  window.RespiraInteractions = {
+    initAll,
+    initReveal,
+    initAccordions,
+    initExpandableCards,
+    initTableToggles,
+    initScrollProgress,
+    initMagneticCards
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initReveal();
+    initScrollProgress();
+  });
+})();
+
+(function () {
   const images = [
     [".hero-media img", "assets/images/photos/hero-ai-respira-nou-barris.svg", "Imagen generada con IA: bienestar adolescente, comunidad y territorio de Nou Barris."],
     [".photo-card.large img", "assets/images/photos/school-community.svg", "Imagen generada con IA: entorno educativo y comunitario de intervención."],
@@ -15,26 +139,16 @@
   ];
 
   const heroKpis = [
-    ["Población adolescente de Barcelona", "148.431", "Personas de 10 a 19 años en 2025", "Idescat, 2025"],
-    ["Participantes directos", "400", "Adolescentes escolarizados o residentes en Nou Barris", "Proyecto Respira Nou Barris"],
-    ["Duración", "6", "Meses de intervención preventiva y comunitaria", "Convocatoria UNIR"],
-    ["Presupuesto máximo", "20.000 €", "Ayuda solicitada ajustada al límite de la convocatoria", "Convocatoria UNIR"]
-  ];
-
-  const justificationParagraphs = [
-    "La justificación se alinea con la asignatura porque interpreta la ansiedad y la depresión adolescente como problemas de desarrollo multidimensional, contextual y multicausal.",
-    "La adolescencia implica cambios en maduración cerebral, identidad, autoconcepto, relación con iguales y autonomía familiar; por tanto, un proyecto socioeducativo no debe limitarse a derivar casos clínicos, sino crear condiciones protectoras en el entorno cotidiano.",
-    "En términos de ciclo vital, la intervención temprana aprovecha la plasticidad del desarrollo y puede fortalecer recursos de afrontamiento, vínculos prosociales y participación comunitaria antes de que el malestar se cronifique.",
-    "El proyecto responde a necesidades sociales concretas: desestigmatizar el malestar emocional, crear alternativas de ocio saludable y comunitario, educar en gestión digital y autoestima, ofrecer apoyo psicológico de proximidad y fortalecer vínculos familiares.",
-    "La elección de Nou Barris se justifica por la relación entre desigualdad territorial, vulnerabilidad socioeconómica y exposición adolescente a factores de riesgo como aislamiento, presión estética, uso problemático de redes, absentismo o baja disponibilidad de apoyos.",
-    "La propuesta es coherente con la rúbrica UNIR porque define territorio, población destinataria, problema, marco teórico, objetivos, metodología, actividades, impacto, presupuesto y referencias APA.",
-    "Respira Nou Barris no plantea una respuesta asistencial aislada, sino una intervención preventiva de seis meses orientada a generar resiliencia y coordinación entre escuela, familia, iguales y recursos de proximidad."
+    ["Población adolescente de Barcelona", "148.431", "Personas de 10 a 19 años en 2025"],
+    ["Participantes directos", "400", "Adolescentes escolarizados o residentes en Nou Barris"],
+    ["Duración", "6", "Meses de intervención preventiva y comunitaria"],
+    ["Presupuesto máximo", "20.000 €", "Ayuda solicitada ajustada al límite de la convocatoria"]
   ];
 
   function injectStyle() {
-    if (document.getElementById("respira-senior-layout")) return;
+    if (document.getElementById("respira-impact-style")) return;
     const style = document.createElement("style");
-    style.id = "respira-senior-layout";
+    style.id = "respira-impact-style";
     style.textContent = `
       body{background:#eaf3ff!important;color:#14213d!important}
       .app-shell{background:#eaf3ff!important}
@@ -66,7 +180,6 @@
       .hero-kpi .k-label{font-size:.81rem;color:#5f6f85;line-height:1.35}
       .hero-kpi .k-value{font-size:clamp(2.1rem,3vw,2.6rem);line-height:1;font-weight:950;color:#0a3779;letter-spacing:0}
       .hero-kpi .k-detail{font-size:.83rem;line-height:1.5;color:#2c3f5d}
-      .hero-kpi .k-source{font-size:.78rem;color:#6b7b90}
       .section[aria-labelledby="kpi-title"],.rubric-panel,.kpi-grid{display:none!important}
       .section:not(.hero){max-width:min(1180px,calc(100vw - 330px))!important;margin:2rem auto!important;padding:clamp(1.25rem,3vw,2.2rem)!important;border:1px solid rgba(14,82,150,.13)!important;border-radius:14px!important;background:#ffffff!important;box-shadow:0 16px 44px rgba(13,45,84,.1)!important;overflow:hidden!important}
       .kpi-card,.info-card,.chart-card,.activity-card,.impact-card,.check-panel,.objective-card,.media-frame,.photo-card{background:#fff!important;border:1px solid rgba(14,82,150,.14)!important;color:#13213d!important}
@@ -108,11 +221,10 @@
     const grid = document.createElement("div");
     grid.className = "hero-kpi-grid";
     grid.setAttribute("aria-label", "Indicadores ejecutivos del proyecto");
-
-    heroKpis.forEach(([label, value, detail, source]) => {
+    heroKpis.forEach(([label, value, detail]) => {
       const card = document.createElement("article");
       card.className = "hero-kpi";
-      card.innerHTML = `<span class="k-label">${label}</span><strong class="k-value">${value}</strong><span class="k-detail">${detail}</span><small class="k-source">${source}</small>`;
+      card.innerHTML = `<span class="k-label">${label}</span><strong class="k-value">${value}</strong><span class="k-detail">${detail}</span>`;
       grid.append(card);
     });
     panel.append(grid);
@@ -132,7 +244,6 @@
   function applyFinalPolish() {
     injectStyle();
     bindControls(document);
-
     document.querySelectorAll(".reveal").forEach((section) => section.classList.add("is-visible"));
     document.querySelector('.section[aria-labelledby="kpi-title"]')?.remove();
     document.querySelectorAll(".rubric-panel").forEach((node) => node.remove());
@@ -160,7 +271,9 @@
     });
 
     const heroCaption = document.querySelector(".hero-media figcaption");
-    if (heroCaption) heroCaption.textContent = "Imagen generada con IA para esta propuesta académica (representación visual del territorio y red comunitaria).";
+    if (heroCaption) {
+      heroCaption.textContent = "Imagen generada con IA para esta propuesta académica (representación visual del territorio y red comunitaria).";
+    }
 
     document.querySelectorAll(".photo-card figcaption").forEach((captionNode, index) => {
       const notes = [
@@ -177,26 +290,6 @@
 
     upsertHeroKpis();
     upsertEcosystem();
-
-    const eyebrow = document.getElementById("home-eyebrow");
-    if (eyebrow) eyebrow.textContent = "Intervención socioeducativa comunitaria";
-
-    const lead = document.getElementById("home-lead");
-    if (lead) {
-      lead.textContent = "Respira Nou Barris acompaña a adolescentes de 12 a 17 años mediante educación emocional, apoyo entre iguales, orientación familiar y conexión con recursos del barrio para prevenir ansiedad y depresión desde una mirada ecológica, inclusiva y no estigmatizante.";
-    }
-
-    const justification = document.getElementById("justification-content");
-    if (justification) {
-      justification.replaceChildren(...justificationParagraphs.map((text) => Object.assign(document.createElement("p"), { textContent: text })));
-    }
-
-    const references = document.getElementById("references-list");
-    if (references) {
-      const refText = "Equipo del proyecto Respira Nou Barris. (2026). Serie visual del dashboard (imágenes generadas con IA para uso académico).";
-      const exists = Array.from(references.children).some((item) => item.textContent.includes("Serie visual del dashboard"));
-      if (!exists) references.append(Object.assign(document.createElement("li"), { textContent: refText }));
-    }
   }
 
   window.RespiraInteractions = { initAll: applyFinalPolish };
