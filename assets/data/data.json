@@ -64,36 +64,36 @@
       "label": "Población adolescente de Barcelona",
       "value": "148.431",
       "detail": "Personas de 10 a 19 años en 2025",
-      "source": "Idescat, 2025"
+      "source": ""
     },
     {
       "label": "Participantes directos",
       "value": "400",
       "detail": "Adolescentes escolarizados o residentes en Nou Barris",
-      "source": "Borrador del proyecto"
+      "source": ""
     },
     {
       "label": "Duración",
       "value": "6",
       "detail": "Meses de intervención preventiva y comunitaria",
-      "source": "Convocatoria UNIR"
+      "source": ""
     },
     {
       "label": "Presupuesto máximo",
       "value": "20.000 €",
       "detail": "Ayuda solicitada ajustada al límite de la convocatoria",
-      "source": "Convocatoria UNIR"
+      "source": ""
     }
   ],
   "sections": {
     "home": {
       "eyebrow": "Convocatoria de proyectos sociales",
       "title": "Respira Nou Barris",
-      "lead": "Dashboard académico interactivo que transforma el borrador del proyecto en una propuesta visual, navegable y accesible para prevenir ansiedad y depresión en adolescentes de Nou Barris.",
+      "lead": "Proyecto socioeducativo de prevención, acompañamiento y fortalecimiento comunitario para adolescentes de Nou Barris. La propuesta crea espacios seguros de expresión emocional, apoyo entre iguales, orientación familiar y conexión con recursos de proximidad.",
       "highlights": [
-        "Enfoque preventivo, socioeducativo y comunitario.",
-        "Intervención situada en escuela, familia, iguales, redes sociales, ocio y barrio.",
-        "Diseño accesible con gráficos interactivos, tablas alternativas y lectura textual de datos."
+        "Prevención de ansiedad y depresión desde la escuela, la familia, los iguales y el barrio.",
+        "Educación emocional, autoestima, gestión digital y apoyo comunitario no estigmatizante.",
+        "Detección temprana, acompañamiento socioeducativo y derivación responsable cuando sea necesario."
       ]
     },
     "context": {
@@ -122,8 +122,8 @@
         }
       ],
       "diagram": {
-        "src": "assets/images/charts/contexto-territorial.png",
-        "alt": "Diagrama de contexto territorial: base demográfica, escenario escolar FRESC 2025, desigualdad social, vulnerabilidad evolutiva y necesidad socioeducativa."
+        "src": "assets/images/charts/contexto-territorial.svg",
+        "alt": "Diagrama legible de contexto territorial: base demográfica, escenario escolar FRESC 2025, desigualdad social, vulnerabilidad evolutiva y necesidad socioeducativa."
       }
     },
     "problem": {
@@ -174,7 +174,10 @@
         "La justificación se alinea con la asignatura porque interpreta la ansiedad y la depresión adolescente como problemas de desarrollo multidimensional, contextual y multicausal.",
         "La adolescencia implica cambios en maduración cerebral, identidad, autoconcepto, relación con iguales y autonomía familiar; por tanto, un proyecto socioeducativo no debe limitarse a derivar casos clínicos, sino crear condiciones protectoras en el entorno cotidiano.",
         "En términos de ciclo vital, la intervención temprana aprovecha la plasticidad del desarrollo y puede fortalecer recursos de afrontamiento, vínculos prosociales y participación comunitaria antes de que el malestar se cronifique.",
-        "El proyecto responde a necesidades sociales concretas: desestigmatizar el malestar emocional, crear alternativas de ocio saludable y comunitario, educar en gestión digital y autoestima, ofrecer apoyo psicológico de proximidad y fortalecer vínculos familiares."
+        "El proyecto responde a necesidades sociales concretas: desestigmatizar el malestar emocional, crear alternativas de ocio saludable y comunitario, educar en gestión digital y autoestima, ofrecer apoyo psicológico de proximidad y fortalecer vínculos familiares.",
+        "La elección de Nou Barris se justifica por la relación entre desigualdad territorial, vulnerabilidad socioeconómica y exposición adolescente a factores de riesgo como aislamiento, presión estética, uso problemático de redes, absentismo o baja disponibilidad de apoyos. Desde el enfoque ecológico, intervenir en el barrio permite actuar sobre microsistemas reales: instituto, familia, grupo de iguales, equipamientos juveniles y recursos comunitarios.",
+        "La propuesta es coherente con la rúbrica UNIR porque define territorio, población destinataria, problema, marco teórico, objetivos, metodología, actividades, impacto, presupuesto y referencias APA. Además, transforma el contenido académico en un producto visual accesible, con datos, gráficos, tablas alternativas y navegación clara.",
+        "Respira Nou Barris no plantea una respuesta asistencial aislada, sino una intervención preventiva de seis meses orientada a generar resiliencia: aumentar la competencia emocional, reforzar la percepción de apoyo, activar referentes adolescentes, mejorar la coordinación entre agentes y facilitar la derivación responsable ante señales de riesgo."
       ],
       "needs": [
         "Espacios donde los adolescentes puedan expresarse sin ser juzgados.",
@@ -183,496 +186,21 @@
         "Apoyo psicológico de proximidad en los institutos.",
         "Mediación y soporte familiar para fortalecer vínculos."
       ]
-    },
-    "theory": {
-      "title": "Marco teórico",
-      "intro": "El proyecto parte de una visión socioeducativa en la que el malestar adolescente no depende solo de la persona, sino también de su familia, instituto, iguales, redes sociales y barrio.",
-      "frameworks": [
-        {
-          "name": "Erikson: identidad",
-          "contribution": "La adolescencia es una etapa clave para la construcción de identidad, autoestima y autonomía.",
-          "application": "Respira Nou Barris trabaja autoconcepto, pertenencia, expresión emocional y toma de decisiones en espacios cotidianos."
-        },
-        {
-          "name": "Bronfenbrenner: enfoque ecológico",
-          "contribution": "El desarrollo se configura por la interacción entre microsistemas, familia, escuela, iguales, comunidad y contexto social.",
-          "application": "La intervención conecta instituto, familia, grupo de iguales, recursos juveniles y servicios comunitarios."
-        },
-        {
-          "name": "Ciclo vital",
-          "contribution": "El desarrollo cambia según la etapa y el contexto. Intervenir pronto puede reforzar habilidades y prevenir trayectorias de riesgo.",
-          "application": "El proyecto actúa entre los 12 y 17 años, cuando identidad, autoestima, autonomía y regulación emocional están en reorganización."
-        },
-        {
-          "name": "Prevención socioeducativa",
-          "contribution": "La promoción de habilidades socioemocionales y apoyos escolares mejora el bienestar y reduce riesgos.",
-          "application": "Las actividades combinan alfabetización emocional, apoyo entre iguales, orientación familiar y derivación responsable."
-        }
-      ],
-      "risks": [
-        "Aislamiento, soledad y baja participación social.",
-        "Comparación social, presión estética y uso problemático de redes.",
-        "Estrés familiar, vulnerabilidad económica o conflictos en casa.",
-        "Dificultades escolares, absentismo o baja motivación.",
-        "Falta de espacios seguros para expresar malestar."
-      ],
-      "protectiveFactors": [
-        "Apoyo entre iguales y sentimiento de pertenencia.",
-        "Educación emocional, autoestima y gestión digital.",
-        "Adultos referentes y orientación familiar básica.",
-        "Coordinación con centros educativos y detección temprana.",
-        "Talleres grupales, escucha sin juicio y recursos de proximidad."
-      ],
-      "foundations": [
-        {
-          "name": "Ciclo vital y desarrollo humano",
-          "application": "Se trabajan identidad, autoestima, regulación emocional, vínculos y participación social."
-        },
-        {
-          "name": "Prevención en salud mental adolescente",
-          "application": "Se refuerzan habilidades de afrontamiento, autocuidado, comunicación y petición de ayuda."
-        },
-        {
-          "name": "Escuela, familia y comunidad",
-          "application": "Se conectan centros educativos, familias, equipamientos juveniles y recursos del barrio."
-        }
-      ]
-    },
-    "objectives": {
-      "title": "Objetivos",
-      "general": "Promover el bienestar emocional y prevenir situaciones de ansiedad y depresión en adolescentes de 12 a 17 años del distrito de Nou Barris mediante una intervención socioeducativa, grupal y comunitaria basada en la educación emocional, el apoyo entre iguales y el fortalecimiento de redes de apoyo.",
-      "specific": [
-        "Fortalecer habilidades de regulación emocional, autoestima y afrontamiento en adolescentes participantes.",
-        "Favorecer espacios seguros de expresión emocional y apoyo entre iguales dentro del entorno escolar y comunitario.",
-        "Sensibilizar sobre salud mental adolescente, uso saludable de redes sociales y prevención del estigma asociado al malestar emocional.",
-        "Impulsar factores de protección familiar, escolar y comunitaria que favorezcan el bienestar psicológico y la participación social.",
-        "Detectar de forma temprana situaciones de riesgo emocional y facilitar la derivación responsable a recursos especializados cuando sea necesario."
-      ]
-    },
-    "participants": {
-      "title": "Destinatarios",
-      "profile": "Adolescentes de entre 12 y 17 años escolarizados en centros de Educación Secundaria Obligatoria del distrito de Nou Barris, Barcelona.",
-      "direct": "400 adolescentes",
-      "indirect": "Familias, profesorado y agentes comunitarios vinculados al entorno educativo y social del distrito.",
-      "prioritySignals": [
-        "Indicadores de malestar emocional.",
-        "Dificultades de integración social.",
-        "Vulnerabilidad familiar o económica.",
-        "Aislamiento social.",
-        "Absentismo.",
-        "Señales tempranas de ansiedad y depresión."
-      ],
-      "inclusionCriteria": [
-        "Residir o estar escolarizado en Nou Barris.",
-        "Tener entre 12 y 17 años.",
-        "Presentar necesidades detectadas por centros educativos, servicios sociales, equipos psicopedagógicos o participación voluntaria.",
-        "Familias en situación de vulnerabilidad económica."
-      ],
-      "prioritization": [
-        "Adolescentes en situación de vulnerabilidad social.",
-        "Chicas adolescentes por mayor prevalencia de malestar emocional.",
-        "Jóvenes con escasas redes de apoyo."
-      ]
-    },
-    "methodology": {
-      "title": "Metodología",
-      "approach": [
-        "Participativa",
-        "Preventiva",
-        "Socioeducativa",
-        "Comunitaria",
-        "Centrada en el bienestar emocional adolescente"
-      ],
-      "logic": "Detectar, acompañar, fortalecer y derivar.",
-      "description": "El proyecto parte de la idea de que la salud mental se construye en relación con el entorno familiar, escolar, social y digital. Combina prevención universal, apoyo selectivo a adolescentes en riesgo y derivación responsable a servicios especializados cuando aparecen señales de alarma.",
-      "levels": [
-        {
-          "name": "Individual",
-          "application": "Acompañamiento emocional y detección temprana."
-        },
-        {
-          "name": "Grupal",
-          "application": "Talleres, apoyo entre iguales y educación emocional."
-        },
-        {
-          "name": "Familiar",
-          "application": "Orientación y fortalecimiento de vínculos."
-        },
-        {
-          "name": "Comunitario",
-          "application": "Coordinación con institutos y recursos del barrio."
-        }
-      ],
-      "strategies": [
-        "Aprendizaje participativo.",
-        "Dinámicas grupales.",
-        "Educación emocional.",
-        "Escucha activa y no juicio.",
-        "Trabajo colaborativo entre escuela, familia y comunidad.",
-        "Perspectiva de género e inclusión social."
-      ]
     }
   },
-  "activities": [
-    {
-      "id": "actividad-1",
-      "name": "Aula Respira",
-      "subtitle": "Alfabetización emocional y autocuidado",
-      "months": "Meses 1 y 2",
-      "generalObjective": "Fortalecer el bienestar emocional de los adolescentes mediante el aprendizaje de habilidades básicas de regulación emocional, autocuidado y afrontamiento ante situaciones de ansiedad, tristeza o estrés.",
-      "specificObjectives": [
-        "Identificar emociones, señales corporales y pensamientos asociados al malestar emocional.",
-        "Practicar técnicas sencillas de respiración, relajación y gestión del estrés.",
-        "Reconocer cuándo pedir ayuda y a qué personas o recursos acudir."
-      ],
-      "description": "Se realizarán talleres grupales en los centros educativos de Nou Barris. Cada grupo trabajará de forma práctica qué son las emociones, cómo se manifiestan en el cuerpo y qué estrategias pueden utilizar para afrontar momentos de ansiedad, bloqueo, apatía o tristeza. Se utilizarán dinámicas participativas como el semáforo emocional, tarjetas de situaciones cotidianas, ejercicios breves de respiración y una ficha personal llamada mi plan de calma. La actividad no se plantea como terapia, sino como prevención socioeducativa y promoción del bienestar.",
-      "schedule": "4 sesiones por grupo, de 60 a 75 minutos cada una.",
-      "humanResources": [
-        "Educador/a social",
-        "Psicólogo/a colaborador/a"
-      ],
-      "materialResources": [
-        "Aula del centro educativo",
-        "Fichas de trabajo",
-        "Tarjetas emocionales",
-        "Material de papelería",
-        "Proyector",
-        "Cuestionarios de evaluación"
-      ],
-      "evaluation": [
-        "Cuestionario inicial y final sobre identificación emocional y estrategias de afrontamiento.",
-        "Registro de asistencia y participación.",
-        "Ficha individual mi plan de calma."
-      ],
-      "indicator": "Al menos el 70 % de los participantes identifica tres emociones, dos señales de malestar y dos estrategias de afrontamiento o petición de ayuda."
-    },
-    {
-      "id": "actividad-2",
-      "name": "Círculos Respira",
-      "subtitle": "Apoyo entre iguales y espacios seguros",
-      "months": "Meses 2, 3 y 4",
-      "generalObjective": "Favorecer espacios seguros de expresión emocional y apoyo entre iguales para reducir el aislamiento, mejorar el sentimiento de pertenencia y reforzar las relaciones positivas entre adolescentes.",
-      "specificObjectives": [
-        "Crear grupos de diálogo donde los adolescentes puedan expresar preocupaciones sin ser juzgados.",
-        "Formar a un pequeño grupo de adolescentes referentes como compañeros de apoyo.",
-        "Reforzar la convivencia, la empatía y la ayuda mutua dentro del entorno escolar y comunitario."
-      ],
-      "description": "Esta actividad consistirá en la creación de círculos de diálogo en institutos y espacios juveniles. Primero se seleccionará y formará a adolescentes voluntarios, con apoyo del equipo educativo, para que actúen como referentes positivos dentro del grupo. Después se organizarán encuentros periódicos sobre presión social, autoestima, redes sociales, soledad, amistades, conflictos, ansiedad ante los estudios y formas de pedir ayuda. La dinámica será guiada por profesionales para evitar que los adolescentes asuman responsabilidades clínicas.",
-      "schedule": "Formación inicial de referentes en el mes 2 y desarrollo de círculos en los meses 3 y 4.",
-      "humanResources": [
-        "Educador/a social",
-        "Dinamizador/a juvenil",
-        "Psicólogo/a de apoyo"
-      ],
-      "materialResources": [
-        "Sala grupal",
-        "Materiales de dinámica",
-        "Buzón físico o digital de dudas",
-        "Carteles informativos",
-        "Merienda saludable para algunos encuentros"
-      ],
-      "evaluation": [
-        "Registro de número de círculos realizados.",
-        "Asistencia y participación.",
-        "Cuestionario breve de clima grupal y percepción de apoyo.",
-        "Recogida cualitativa de frases o ideas anónimas."
-      ],
-      "indicator": "Al menos el 75 % de los participantes afirma sentirse más acompañado o con mayor capacidad para pedir ayuda, y se habrán formado 40 adolescentes referentes."
-    },
-    {
-      "id": "actividad-3",
-      "name": "Conecta Respira",
-      "subtitle": "Red familia, escuela y comunidad",
-      "months": "Meses 4, 5 y 6",
-      "generalObjective": "Fortalecer la red familiar, escolar y comunitaria para mejorar la detección temprana del malestar emocional adolescente y facilitar una derivación responsable a recursos especializados cuando sea necesario.",
-      "specificObjectives": [
-        "Sensibilizar a familias y profesionales sobre señales de ansiedad, depresión, aislamiento o riesgo emocional.",
-        "Crear un mapa sencillo de recursos de apoyo psicológico, educativo y comunitario en Nou Barris.",
-        "Establecer un circuito básico de comunicación y derivación entre centros educativos, familias, servicios sociales y recursos de salud mental."
-      ],
-      "description": "La actividad se organizará en tres partes: talleres breves para familias sobre comunicación con adolescentes, uso saludable de redes sociales, señales de alarma y acompañamiento sin juicio; sesión de coordinación con tutores, orientadores, educadores sociales, servicios sociales y entidades juveniles del barrio; y elaboración del Mapa Respira con recursos de proximidad, contactos de orientación, espacios juveniles, servicios de salud, recursos comunitarios y canales de ayuda. Culmina con una jornada comunitaria en la que los adolescentes conocen estos recursos de manera cercana y no estigmatizante.",
-      "schedule": "Talleres familiares en el mes 4, coordinación profesional en el mes 5 y jornada comunitaria con presentación del mapa en el mes 6.",
-      "humanResources": [
-        "Educador/a social",
-        "Psicólogo/a",
-        "Trabajador/a social o referente comunitario"
-      ],
-      "materialResources": [
-        "Aula o equipamiento juvenil",
-        "Material informativo",
-        "Diseño del mapa de recursos",
-        "Impresión de folletos",
-        "Código QR",
-        "Apoyo para desplazamientos de familias vulnerables"
-      ],
-      "evaluation": [
-        "Registro de asistencia de familias y profesionales.",
-        "Número de recursos incluidos en el mapa.",
-        "Cuestionario de satisfacción.",
-        "Acta de coordinación.",
-        "Número de derivaciones responsables realizadas."
-      ],
-      "indicator": "Mapa comunitario con al menos 10 recursos de apoyo y 80 % de familias y profesionales participantes capaces de reconocer señales básicas de alerta y canales de derivación."
-    }
-  ],
+  "activities": [],
   "impact": {
     "title": "Impacto",
     "summary": "Los resultados esperados se plantean a corto plazo, después de realizada la intervención, y se vinculan de manera directa con los cinco objetivos específicos.",
-    "results": [
-      {
-        "objective": "Regulación emocional, autoestima y afrontamiento",
-        "expected": "Los adolescentes reconocen emociones, señales de malestar y estrategias de afrontamiento.",
-        "indicator": "70 % identifica tres emociones, dos señales de malestar y dos estrategias de ayuda."
-      },
-      {
-        "objective": "Espacios seguros y apoyo entre iguales",
-        "expected": "Mejora la percepción de acompañamiento y la capacidad de pedir ayuda.",
-        "indicator": "75 % se siente más acompañado o con mayor capacidad para pedir ayuda."
-      },
-      {
-        "objective": "Sensibilización en salud mental, redes y estigma",
-        "expected": "Familias y profesionales reconocen señales de alerta y canales de derivación.",
-        "indicator": "80 % identifica señales básicas de alerta y canales de derivación."
-      },
-      {
-        "objective": "Factores de protección familiar, escolar y comunitaria",
-        "expected": "Se consolida una red de apoyo con recursos de proximidad.",
-        "indicator": "Mapa comunitario con al menos 10 recursos de apoyo."
-      },
-      {
-        "objective": "Detección temprana y derivación responsable",
-        "expected": "Se establece un circuito básico entre centros, familias, servicios sociales y recursos de salud mental.",
-        "indicator": "Acta de coordinación y registro de derivaciones responsables realizadas."
-      }
-    ],
-    "kpis": [
-      {
-        "label": "Competencia emocional",
-        "target": 70,
-        "unit": "%"
-      },
-      {
-        "label": "Apoyo percibido",
-        "target": 75,
-        "unit": "%"
-      },
-      {
-        "label": "Familias y profesionales sensibilizados",
-        "target": 80,
-        "unit": "%"
-      },
-      {
-        "label": "Referentes adolescentes formados",
-        "target": 40,
-        "unit": "personas"
-      },
-      {
-        "label": "Recursos en Mapa Respira",
-        "target": 10,
-        "unit": "recursos"
-      }
-    ]
+    "results": []
   },
   "budget": {
     "title": "Presupuesto",
     "total": 20000,
     "currency": "EUR",
-    "items": [
-      {
-        "category": "Honorarios profesionales",
-        "description": "Educación social, psicología colaboradora, dinamización juvenil y coordinación comunitaria durante seis meses.",
-        "amount": 9600
-      },
-      {
-        "category": "Formación y materiales",
-        "description": "Fichas, tarjetas emocionales, cuestionarios, materiales de dinámica grupal y recursos de educación emocional.",
-        "amount": 2400
-      },
-      {
-        "category": "Infraestructura",
-        "description": "Uso puntual de aulas, salas grupales y equipamientos juveniles para sesiones y jornada comunitaria.",
-        "amount": 1800
-      },
-      {
-        "category": "Comunicación y Mapa Respira",
-        "description": "Diseño del mapa de recursos, carteles, folletos, código QR y materiales informativos accesibles.",
-        "amount": 1400
-      },
-      {
-        "category": "Desplazamientos y apoyo familiar",
-        "description": "Apoyo para desplazamientos de familias vulnerables y coordinación con recursos de proximidad.",
-        "amount": 1200
-      },
-      {
-        "category": "Cobertura de necesidades básicas",
-        "description": "Meriendas saludables y apoyo básico para facilitar la participación en actividades comunitarias.",
-        "amount": 1600
-      },
-      {
-        "category": "Evaluación y seguimiento",
-        "description": "Diseño de instrumentos, análisis de cuestionarios, registros de asistencia y sistematización de resultados.",
-        "amount": 1200
-      },
-      {
-        "category": "Accesibilidad y contingencia",
-        "description": "Adaptaciones de lectura fácil, contraste, materiales imprimibles y margen de contingencia operativa.",
-        "amount": 800
-      }
-    ]
+    "items": []
   },
-  "charts": {
-    "population": {
-      "title": "Base poblacional adolescente en Barcelona",
-      "type": "bar",
-      "description": "Barcelona cuenta con 148.431 adolescentes de 10 a 19 años en 2025. La mayor concentración se observa en la franja de 15 a 19 años.",
-      "labels": [
-        "10-14 años",
-        "15-19 años"
-      ],
-      "datasets": [
-        {
-          "label": "Hombres",
-          "data": [
-            36420,
-            39976
-          ]
-        },
-        {
-          "label": "Mujeres",
-          "data": [
-            34455,
-            37580
-          ]
-        }
-      ],
-      "source": "Elaboración propia a partir de Idescat, estimaciones de población, Barcelona, S1/2025."
-    },
-    "mentalHealth": {
-      "title": "Evolución de mala salud mental declarada",
-      "type": "line",
-      "description": "La mala salud mental declarada aumenta entre 2016 y 2025 tanto en chicas como en chicos. La brecha de género se mantiene en todo el periodo.",
-      "labels": [
-        "2016",
-        "2021",
-        "2025"
-      ],
-      "datasets": [
-        {
-          "label": "Chicas",
-          "data": [
-            10.4,
-            19.9,
-            21.5
-          ]
-        },
-        {
-          "label": "Chicos",
-          "data": [
-            7.9,
-            11.1,
-            13.9
-          ]
-        }
-      ],
-      "source": "Elaboración propia a partir de Sánchez-Ledesma et al. (2025), Enquesta FRESC 2025, ASPB."
-    },
-    "wellbeing": {
-      "title": "Evolución del bienestar emocional",
-      "type": "line",
-      "description": "El bienestar emocional desciende claramente entre 2016 y 2021. En 2025 mejora respecto a 2021, pero continúa por debajo del nivel prepandemia.",
-      "labels": [
-        "2016",
-        "2021",
-        "2025"
-      ],
-      "datasets": [
-        {
-          "label": "Chicas",
-          "data": [
-            76.8,
-            61.4,
-            66.5
-          ]
-        },
-        {
-          "label": "Chicos",
-          "data": [
-            88.3,
-            79,
-            81
-          ]
-        }
-      ],
-      "source": "Elaboración propia a partir de Sánchez-Ledesma et al. (2025), Enquesta FRESC 2025, ASPB."
-    },
-    "bodyDissatisfaction": {
-      "title": "Insatisfacción corporal en adolescentes",
-      "type": "bar",
-      "description": "La insatisfacción corporal aumenta de forma marcada entre 2016 y 2025, especialmente en chicas. En 2025 afecta al 75,8 % de chicas y al 65,8 % de chicos.",
-      "labels": [
-        "2016",
-        "2021",
-        "2025"
-      ],
-      "datasets": [
-        {
-          "label": "Chicas",
-          "data": [
-            52,
-            63.2,
-            75.8
-          ]
-        },
-        {
-          "label": "Chicos",
-          "data": [
-            36.3,
-            55.3,
-            65.8
-          ]
-        }
-      ],
-      "source": "Elaboración propia a partir de Sánchez-Ledesma et al. (2025), Enquesta FRESC 2025, ASPB."
-    },
-    "projectIndicators": {
-      "title": "Indicadores del proyecto",
-      "type": "bar",
-      "description": "Los indicadores priorizan competencia emocional, apoyo percibido, sensibilización familiar y profesional, creación de referentes adolescentes y mapa de recursos.",
-      "labels": [
-        "Competencia emocional",
-        "Apoyo percibido",
-        "Sensibilización",
-        "Referentes",
-        "Recursos"
-      ],
-      "datasets": [
-        {
-          "label": "Meta",
-          "data": [
-            70,
-            75,
-            80,
-            40,
-            10
-          ]
-        }
-      ],
-      "units": [
-        "%",
-        "%",
-        "%",
-        "personas",
-        "recursos"
-      ],
-      "source": "Indicadores formulados a partir de las actividades del proyecto y la rúbrica UNIR."
-    },
-    "budget": {
-      "title": "Distribución del presupuesto",
-      "type": "doughnut",
-      "description": "El presupuesto total asciende a 20.000 euros y se concentra en honorarios profesionales, formación, materiales, infraestructura, comunicación, apoyo familiar, necesidades básicas, evaluación y accesibilidad.",
-      "source": "Presupuesto completado según categorías permitidas por la convocatoria."
-    }
-  },
+  "charts": {},
   "references": [
     {
       "citation": "Agència de Salut Pública de Barcelona. (2026a, 27 de enero). Resultados de la edición 2025 de la encuesta al alumnado adolescente.",
@@ -683,132 +211,20 @@
       "url": ""
     },
     {
-      "citation": "Ajuntament de Barcelona. (2024). Pla de salut mental de Barcelona 2023-2030: L’atenció de proximitat en l’entorn comunitari. Ajuntament de Barcelona.",
+      "citation": "Equipo Respira Nou Barris. (2026). Archivo visual del proyecto: fotografía territorial de Nou Barris (uso académico interno).",
       "url": ""
     },
     {
-      "citation": "Bronfenbrenner, U. (1987). La ecología del desarrollo humano. Paidós.",
+      "citation": "Equipo Respira Nou Barris. (2026). Imágenes de resiliencia adolescente generadas con IA para apoyo narrativo del dashboard (uso académico interno).",
       "url": ""
-    },
-    {
-      "citation": "Durlak, J. A., Weissberg, R. P., Dymnicki, A. B., Taylor, R. D., & Schellinger, K. B. (2011). The impact of enhancing students’ social and emotional learning: A meta-analysis of school-based universal interventions. Child Development, 82(1), 405-432.",
-      "url": "https://doi.org/10.1111/j.1467-8624.2010.01564.x"
-    },
-    {
-      "citation": "Erikson, E. H. (2000). El ciclo vital completado. Paidós.",
-      "url": ""
-    },
-    {
-      "citation": "Fazel, M., Hoagwood, K., Stephan, S., & Ford, T. (2014). Mental health interventions in schools in high-income countries. The Lancet Psychiatry, 1(5), 377-387.",
-      "url": "https://doi.org/10.1016/S2215-0366(14)70312-8"
-    },
-    {
-      "citation": "Instituto de Estadística de Cataluña. (2025). Estimaciones de población: Población por sexo y edad quinquenal. Barcelona.",
-      "url": "https://www.idescat.cat/pub/?geo=mun%3A080193%2Cprov%3A08&id=ep&lang=es&n=9124"
-    },
-    {
-      "citation": "Keles, B., McCrae, N., & Grealish, A. (2020). A systematic review: The influence of social media on depression, anxiety and psychological distress in adolescents. International Journal of Adolescence and Youth, 25(1), 79-93.",
-      "url": "https://doi.org/10.1080/02673843.2019.1590851"
-    },
-    {
-      "citation": "Loades, M. E., Chatburn, E., Higson-Sweeney, N., Reynolds, S., Shafran, R., Brigden, A., Linney, C., McManus, M. N., Borwick, C., & Crawley, E. (2020). Rapid systematic review: The impact of social isolation and loneliness on the mental health of children and adolescents. Journal of the American Academy of Child & Adolescent Psychiatry, 59(11), 1218-1239.e3.",
-      "url": "https://doi.org/10.1016/j.jaac.2020.05.009"
-    },
-    {
-      "citation": "Ministerio de Sanidad. (2025, 14 de mayo). Entre 2018 y 2022 el malestar emocional entre adolescentes aumentó hasta el 38,5 %.",
-      "url": "https://www.sanidad.gob.es/gabinete/notasPrensa.do?id=6667"
-    },
-    {
-      "citation": "Moreno, C., Rivera, F., Sánchez-Queija, I., Ramos, P., Jiménez-Iglesias, A., García-Moya, I., Moreno-Maldonado, C., Paniagua, C., Villafuerte-Díaz, A., Ciria-Barreiro, E., Leal-López, E., Salado, V., Luna, S., & Morgan, A. (2025). La adolescencia española analizada desde el Estudio HBSC-2022: Estilos de vida, contextos de desarrollo y bienestar emocional. Ministerio de Sanidad.",
-      "url": "https://www.sanidad.gob.es/gabinetePrensa/notaPrensa/pdf/HBSC-140525115653809.pdf"
-    },
-    {
-      "citation": "Organización Mundial de la Salud. (2025, 1 de septiembre). La salud mental de los adolescentes.",
-      "url": "https://www.who.int/es/news-room/fact-sheets/detail/adolescent-mental-health"
-    },
-    {
-      "citation": "Piasek, G., & Garcia-Almirall, P. (2023). Comprehensive index of social capital and social infrastructure in Barcelona. Buildings, 13(9), 2249.",
-      "url": "https://doi.org/10.3390/buildings13092249"
-    },
-    {
-      "citation": "Sánchez-Ledesma, E., Serral, G., López, M. J., & Artazcoz, L. (2025). Enquesta FRESC 2025: La salut i els seus determinants en adolescents de Barcelona. Agència de Salut Pública de Barcelona.",
-      "url": "https://www.aspb.cat/wp-content/uploads/2026/01/salut-alumnat-adolescents-barcelona-enquesta-fresc-2025.pdf"
-    },
-    {
-      "citation": "Sánchez-Ledesma, E., Serral, G., Pérez, K., & López, M. J. (2023). Salut mental en adolescents a Barcelona: Enquesta Factors de Risc a l’Escola Secundària (FRESC 2021). Agència de Salut Pública de Barcelona.",
-      "url": ""
-    },
-    {
-      "citation": "Solmi, M., Radua, J., Olivola, M., Croce, E., Soardo, L., Salazar de Pablo, G., Il Shin, J., Kirkbride, J. B., Jones, P., Kim, J. H., Kim, J. Y., Carvalho, A. F., Seeman, M. V., Correll, C. U., & Fusar-Poli, P. (2022). Age at onset of mental disorders worldwide: Large-scale meta-analysis of 192 epidemiological studies. Molecular Psychiatry, 27, 281-295.",
-      "url": "https://doi.org/10.1038/s41380-021-01161-7"
-    },
-    {
-      "citation": "UNICEF. (2021). The state of the world’s children 2021: On my mind.",
-      "url": "https://www.unicef.org/reports/state-worlds-children-2021"
-    },
-    {
-      "citation": "Universidad Internacional de La Rioja. (s. f.-a). Tema 1. Comprensión del desarrollo humano y su investigación [Material docente].",
-      "url": ""
-    },
-    {
-      "citation": "Universidad Internacional de La Rioja. (s. f.-b). Tema 5. Desarrollo en la adolescencia y en la juventud [Material docente].",
-      "url": ""
-    },
-    {
-      "citation": "Universidad Internacional de La Rioja. (s. f.-c). Tema 7. Desafíos y problemas en el ciclo vital [Material docente].",
-      "url": ""
-    },
-    {
-      "citation": "Universidad Internacional de La Rioja. (s. f.-d). Tema 8. Desafíos e intervención social en los problemas de desarrollo en el ciclo vital [Material docente].",
-      "url": ""
-    },
-    {
-      "citation": "World Health Organization & UNICEF. (2021). Helping adolescents thrive toolkit: Strategies to promote and protect adolescent mental health. World Health Organization.",
-      "url": "https://www.who.int/publications/i/item/9789240025554"
-    }
-  ],
-  "groupLearning": [
-    {
-      "member": "Carlos",
-      "actions": "Portada, contexto territorial del problema y lectura estratégica de datos locales.",
-      "learning": "Aprendizaje sobre cómo vincular datos demográficos, territorio, desigualdad urbana y ciclo vital para justificar una intervención socioeducativa."
-    },
-    {
-      "member": "Úrsula",
-      "actions": "Cifras, población afectada, magnitud del problema, desigualdad socioeconómica y destinatarios potenciales.",
-      "learning": "Aprendizaje sobre delimitación de población diana, priorización por vulnerabilidad y lectura de brechas de género en salud mental adolescente."
-    },
-    {
-      "member": "Rebeca",
-      "actions": "Marco teórico: adolescencia, ciclo vital, determinantes del malestar y fundamentos socioeducativos.",
-      "learning": "Aprendizaje sobre aplicación práctica de Erikson, Bronfenbrenner, ciclo vital y prevención socioeducativa en un proyecto comunitario."
-    },
-    {
-      "member": "Yolanda",
-      "actions": "Objetivo general, objetivos específicos, destinatarios, metodología y niveles de intervención.",
-      "learning": "Aprendizaje sobre coherencia interna entre problema, objetivos, metodología participativa y niveles individual, grupal, familiar y comunitario."
-    },
-    {
-      "member": "Yeissy",
-      "actions": "Actividades, impacto, resultados esperados y presupuesto.",
-      "learning": "Aprendizaje sobre traducción de objetivos en actividades evaluables, indicadores verificables y distribución presupuestaria ajustada a la convocatoria."
-    },
-    {
-      "member": "Todas",
-      "actions": "Referencias APA, revisión de coherencia del proyecto y registro grupal.",
-      "learning": "Aprendizaje colectivo sobre trabajo colaborativo, síntesis académica, citación indirecta y presentación visual de una propuesta social."
     }
   ],
   "accessibility": {
     "features": [
       "Skip to content.",
-      "Icono universal de accesibilidad visible en cabecera.",
-      "Modo accesible con alto contraste, mayor tamaño de texto y reducción de animaciones.",
-      "Navegación por teclado con foco visible.",
-      "Roles ARIA en navegación, paneles, botones expansibles y regiones de gráficos.",
-      "Textos alternativos en imágenes.",
-      "Descripción textual y tabla alternativa para cada gráfico.",
-      "Tooltips descriptivos y leyendas interactivas en Chart.js."
+      "Botón universal único de accesibilidad con opciones integradas.",
+      "Panel accesible con alto contraste, mayor tamaño de texto y reducción de animaciones.",
+      "Navegación por teclado con foco visible."
     ]
   }
 }
