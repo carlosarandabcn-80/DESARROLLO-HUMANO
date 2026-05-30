@@ -23,6 +23,13 @@
         font-size: 0.82rem;
         line-height: 1.22;
       }
+      .brand-project {
+        color: #f4f8ff;
+        font-weight: 800;
+        font-size: 1.85rem;
+        line-height: 1.1;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+      }
       .topbar {
         position: fixed;
         top: 1rem;
@@ -55,8 +62,8 @@
         top: calc(100% + 0.75rem);
       }
       .hero {
-        min-height: min(58vh, 540px);
-        padding: 0.6rem 0 1.2rem;
+        min-height: calc(100svh - 2rem);
+        padding: 1rem 0 1.4rem;
       }
       .hero-media img {
         aspect-ratio: 16 / 10;
@@ -88,7 +95,7 @@
     <div class="app-shell">
       <aside class="sidebar" aria-label="Navegación del dashboard">
         <div class="brand-block">
-          <img src="assets/images/logo-unir.png" alt="UNIR, La Universidad en Internet" width="139" height="107">
+          <img src="assets/images/logo-unir-embedded.svg" alt="UNIR, La Universidad en Internet" width="164" height="64">
           <span class="brand-kicker">Grado de Educación Social<br>Estructura Social</span>
           <span class="brand-project">Respira Nou Barris</span>
         </div>
@@ -186,8 +193,8 @@
             </div>
             <div class="hero-panel" aria-label="Resumen ejecutivo del proyecto">
               <figure class="hero-media">
-                <img src="assets/images/photos/hero-ai-respira-nou-barris.jpg" alt="Jóvenes en un espacio urbano de Nou Barris con Barcelona al fondo, en un contexto de convivencia comunitaria." width="1920" height="1080" fetchpriority="high">
-                <figcaption><small>Imagen de portada creada con IA para uso académico interno del proyecto.</small></figcaption>
+                <img src="assets/images/photos/hero-blue-cover.svg" alt="Adolescentes y comunidad en entorno urbano de Nou Barris, escena de resiliencia y convivencia." width="1600" height="914" fetchpriority="high">
+                <figcaption><small>Imagen creada con IA para uso académico interno del proyecto.</small></figcaption>
               </figure>
               <div class="pulse-card">
                 <span class="pulse-label">Población base</span>
@@ -224,7 +231,7 @@
             </div>
             <div class="photo-grid">
               <figure class="photo-card large">
-                <img src="assets/images/photos/community-resilience-bw.jpg" alt="Grupo de adolescentes en conversación con una educadora en un entorno comunitario de barrio." loading="lazy" width="1800" height="1032">
+                <img src="assets/images/photos/group-session-real.svg" alt="Sesión socioeducativa grupal con adolescentes y profesional de referencia." loading="lazy" width="1400" height="800">
                 <figcaption>
                   <span>Acompañamiento comunitario</span>
                   Vínculo educativo y escucha activa como base de la prevención socioemocional.
@@ -232,7 +239,7 @@
                 </figcaption>
               </figure>
               <figure class="photo-card">
-                <img src="assets/images/photos/peer-support-bw.jpg" alt="Adolescentes participando en un espacio de apoyo entre iguales en contexto educativo." loading="lazy" width="1800" height="1032">
+                <img src="assets/images/photos/group-session-illustration.svg" alt="Dinámica de apoyo emocional entre adolescentes en círculo de convivencia." loading="lazy" width="1400" height="800">
                 <figcaption>
                   <span>Apoyo entre iguales</span>
                   Espacios seguros para expresión emocional, pertenencia y ayuda mutua.
@@ -240,7 +247,7 @@
                 </figcaption>
               </figure>
               <figure class="photo-card">
-                <img src="assets/images/photos/hero-parc-nou-barris-2400.jpg" alt="Entorno urbano y espacio verde de Nou Barris como escenario territorial del proyecto." loading="lazy" width="2400" height="1530">
+                <img src="assets/images/photos/hero-blue-cover.svg" alt="Entorno comunitario de Nou Barris con presencia de jóvenes y equipamientos de barrio." loading="lazy" width="1600" height="914">
                 <figcaption>
                   <span>Contexto territorial</span>
                   Lectura urbana de Nou Barris como ecosistema de intervención socioeducativa.
