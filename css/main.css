@@ -92,7 +92,7 @@ h3 {
 
 h1 {
   margin-bottom: 1rem;
-  font-size: 4rem;
+  font-size: clamp(2.35rem, 4.2vw, 3.4rem);
   max-width: 12ch;
 }
 
@@ -148,12 +148,12 @@ p {
 }
 
 .hero {
-  min-height: calc(100vh - var(--topbar-height));
+  min-height: calc(100svh - 2rem);
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.72fr);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
   gap: 2rem;
   align-items: center;
-  padding-top: 3.2rem;
+  padding: 1rem 0 1.4rem;
   border-bottom: 1px solid var(--line);
 }
 
@@ -162,11 +162,8 @@ p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(243, 246, 251, 0.95), rgba(243, 246, 251, 0.72) 48%, rgba(243, 246, 251, 0.45)),
-    url("https://upload.wikimedia.org/wikipedia/commons/2/24/Parc_Central_Nou_Barris_%287185960105%29.jpg");
-  background-position: center;
-  background-size: cover;
-  opacity: 0.42;
+    linear-gradient(100deg, rgba(243, 246, 251, 0.94), rgba(243, 246, 251, 0.8) 50%, rgba(243, 246, 251, 0.68));
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -215,9 +212,11 @@ p {
 .hero-panel {
   display: grid;
   gap: 1rem;
+  align-content: start;
 }
 
 .hero-media {
+  position: relative;
   overflow: hidden;
   margin: 0;
   border: 1px solid rgba(255, 255, 255, 0.72);
@@ -230,23 +229,49 @@ p {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
+  max-height: 300px;
   object-fit: cover;
+  object-position: center 52%;
+  transform: scale(1);
+  transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 700ms ease;
+}
+
+.hero-media::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(0, 87, 255, 0.18), rgba(0, 166, 166, 0.02) 48%, rgba(255, 107, 53, 0.16)),
+    radial-gradient(circle at 20% 12%, rgba(255, 255, 255, 0.28), transparent 30%);
+  content: "";
+}
+
+.hero-media:hover img {
+  transform: scale(1.03);
+  filter: saturate(1.08) contrast(1.04);
 }
 
 .hero-media figcaption {
+  position: relative;
+  z-index: 1;
   padding: 0.75rem 0.9rem;
   color: var(--muted);
   font-size: 0.86rem;
   font-weight: 700;
 }
 
+.hero-media figcaption small {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
 .pulse-card {
-  min-height: 280px;
+  min-height: 220px;
   display: grid;
   align-content: center;
   gap: 0.3rem;
   padding: 2rem;
-  border: 1px soliêÅrgba(10, 79, 164, 0.18);
+  border: 1px solid rgba(10, 79, 164, 0.18);
   border-radius: var(--radius);
   background:
     linear-gradient(135deg, rgba(10, 79, 164, 0.12), rgba(0, 140, 149, 0.10)),
@@ -256,7 +281,7 @@ p {
 
 .pulse-card strong {
   color: var(--unir-blue-dark);
-  font-size: 4.5rem;
+  font-size: clamp(2.7rem, 4vw, 3.8rem);
   line-height: 1;
 }
 
@@ -313,7 +338,8 @@ p {
 .method-shell,
 .table-wrap,
 .media-frame,
-.rubric-mini {
+.rubric-mini,
+.group-mini {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.88);
@@ -401,7 +427,16 @@ p {
   display: block;
   width: 100%;
   height: auto;
+  object-fit: contain;
   background: #ffffff;
+}
+
+#context-diagram {
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  width: 100%;
+  max-height: 640px;
+  padding: 0.5rem;
 }
 
 .media-frame figcaption {
@@ -447,8 +482,21 @@ p {
   min-height: inherit;
   display: block;
   object-fit: cover;
+  object-position: center center;
   transform: scale(1.02);
   transition: transform 500ms ease, filter 500ms ease;
+}
+
+.photo-card.large img {
+  object-position: 46% center;
+}
+
+.photo-card:nth-child(2) img {
+  object-position: center 40%;
+}
+
+.photo-card:nth-child(3) img {
+  object-position: center 46%;
 }
 
 .photo-card:hover img {
@@ -473,6 +521,14 @@ p {
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.photo-card figcaption small {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .info-card h3 {
